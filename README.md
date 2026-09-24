@@ -40,16 +40,7 @@ La aplicación incluye una animación de vuelo de 12 fotogramas en `assets/anima
 ## Cambios recientes
 - El idioma de la interfaz se detecta automáticamente desde el idioma preferido del dispositivo en el primer inicio; una selección manual se conserva en el navegador.
 - En preguntas de opción múltiple, cuando una pregunta tiene varias respuestas aceptadas, se selecciona aleatoriamente una de ellas como la única respuesta correcta mostrada.
-
-
-## v17 corrección del flujo de respuesta
-- Las respuestas incorrectas siempre muestran la pantalla de resultado para continuar o reportar la pregunta.
-- Se evita que un error auxiliar de analítica/reportes bloquee la comprobación.
-- El reporte de pregunta conserva pregunta, posibles respuestas, respuesta del usuario, respuestas correctas y nota.
-
-## v16 reportes
-- Botón inferior “Reportar un problema” traducido según el idioma de la app.
-- Agitar el teléfono abre el menú de reportes cuando el dispositivo permite detectar movimiento.
-- Incluye problemas comunes y un reporte especial para respuestas marcadas como equivocadas.
-- Los reportes guardan pregunta, respuesta del usuario y respuestas correctas cuando aplica.
-- Los reportes se guardan localmente y se pueden exportar a CSV o JSON.
+- **Reportar un problema:** botón fijo abajo a la derecha (y también se abre agitando el celular) con un menú de problemas comunes de este tipo de apps (no carga, no guarda progreso, pregunta/respuesta incorrecta, traducción, problema visual, se congela/cierra, error al instalar, otro). En iPhone, la primera vez que se toca el botón se pide permiso para detectar el movimiento del celular; en Android no hace falta.
+- **Reportar pregunta:** al responder cualquier pregunta aparece, junto a "Continuar", un botón "Reportar pregunta" que guarda la pregunta, tu respuesta y las respuestas correctas.
+- Ambos tipos de reporte se guardan en el dispositivo (localStorage) y se pueden exportar como archivo CSV desde **Preferencias → Reportes → Exportar reportes (CSV)**, listo para abrir en Excel o Google Sheets.
+- Todo lo anterior está traducido a los 5 idiomas de la app (español, inglés, chino, tagalo, vietnamita) y cambia automáticamente si cambias el idioma.

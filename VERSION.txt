@@ -1,2 +1,10 @@
-Uncle Sam Says PWA v17
-Fixed incorrect-answer flow so wrong answers always show the result screen, deduct a life, allow Continue, and keep Report question with the full answer context available. Hardened analytics/report hooks so they cannot block the quiz.
+Uncle Sam Says — PWA v14
+
+Cambio: nombre visible de la app/PWA confirmado como "Uncle Sam Says".
+El almacenamiento local de progreso se conserva sin cambios.
+
+v14 — Nuevo:
+- Botón "Reportar un problema" fijo en la esquina inferior derecha, y también se puede abrir agitando el celular. Muestra un menú con los problemas más comunes de este tipo de apps.
+- Botón "Reportar pregunta" junto a "Continuar" al responder cualquier pregunta (correcta o incorrecta); guarda la pregunta, tu respuesta y las respuestas correctas.
+- Todo se guarda localmente en el dispositivo (localStorage) y se puede exportar como CSV (abre en Excel / Google Sheets) desde Preferencias.
+- Todo el texto nuevo respeta el idioma activo de la app (ES/EN/ZH/TL/VI) y cambia si cambias el idioma.

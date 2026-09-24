@@ -154,7 +154,7 @@ animation:stampIn .4s cubic-bezier(0.34,1.56,0.64,1);
 .answer-input{flex:1;min-width:0;padding:11px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.07);color:#fff;font-size:14px;font-family:inherit;}
 .answer-input::placeholder{color:rgba(255,255,255,0.42);}
 .expert-textarea{width:100%;resize:vertical;margin-bottom:8px;display:block;}
-.btn-check{touch-action:manipulation;-webkit-tap-highlight-color:transparent;background:var(--gold);border:1px solid var(--gold);color:#241C10;border-radius:8px;padding:11px 16px;font-weight:500;font-size:14px;font-family:inherit;cursor:pointer;}
+.btn-check{background:var(--gold);border:1px solid var(--gold);color:#241C10;border-radius:8px;padding:11px 16px;font-weight:500;font-size:14px;font-family:inherit;cursor:pointer;}
 .choice-row{display:flex;gap:8px;margin-top:4px;}
 .choice-btn{flex:1;padding:11px 10px;border-radius:8px;font-size:13px;font-family:inherit;cursor:pointer;}
 button.wide{
@@ -238,8 +238,13 @@ button:active{transform:none;}
 
 /* v3 enhancement layer */
 .v3-toolbar{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}.v3-tool{flex:1;min-width:110px;padding:10px 12px;border-radius:9px;border:1px solid rgba(255,255,255,.24);background:var(--bg-panel);color:#fff;font:500 13px inherit;cursor:pointer}.v3-tool.primary{background:var(--gold);color:var(--ink);border-color:var(--gold)}.v3-tool.install-app{background:linear-gradient(135deg,var(--gold),#f0c65b);color:var(--ink);border-color:var(--gold);font-weight:700}.v3-tool.install-app[hidden]{display:none}
-.v3-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.68);z-index:100;display:flex;align-items:flex-end;justify-content:center;padding:12px}.v3-modal{width:min(720px,100%);max-height:92vh;overflow:auto;background:var(--bg-panel);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.45)}.v3-modal h2{font-family:'Fraunces',serif;margin:0 0 6px;color:#fff}.v3-close{float:right;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:6px 9px;cursor:pointer}.v3-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0}.v3-kpi{background:var(--bg-panel-2);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px}.v3-kpi b{display:block;font:600 24px 'Fraunces',serif;color:var(--gold)}.v3-kpi span{font-size:11px;color:rgba(255,255,255,.68)}.v3-section{margin-top:18px}.v3-section h3{font:600 15px 'Fraunces',serif;color:var(--gold);margin:0 0 9px}.v3-bar{height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:5px}.v3-bar>i{display:block;height:100%;background:var(--gold);border-radius:99px}.v3-row{background:rgba(255,255,255,.06);border-radius:9px;padding:9px 10px;margin:6px 0;font-size:12px}.v3-row strong{color:#fff}.v3-muted{color:rgba(255,255,255,.6)}.v3-badge{display:inline-block;border:1px solid var(--gold);border-radius:99px;padding:5px 8px;margin:3px;font-size:11px;color:var(--gold)}.v3-settings label{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px}.v3-settings input{width:18px;height:18px}.v3-progress{height:7px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin:7px 0 12px}.v3-progress i{display:block;height:100%;background:var(--gold);width:0}.v3-install{position:fixed;left:12px;right:12px;bottom:12px;z-index:90;background:var(--bg-panel-2);border:1px solid var(--gold);border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.35);font-size:12px}.v3-install button{margin-top:8px}.v3-route{border-left:3px solid var(--gold);padding-left:10px}.v3-due{color:#F3A9A0}.v3-small{font-size:11px}.v3-exam-breakdown{margin-top:10px;text-align:left}.v3-cat-chip{display:flex;justify-content:space-between;gap:8px;margin:5px 0;font-size:12px}.v3-report-bottom{width:100%;margin:18px 0 6px;padding:11px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;font:500 13px inherit;cursor:pointer}.v3-report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}.v3-report-choice{width:100%;padding:10px;border-radius:9px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;text-align:left;font:500 12px inherit;cursor:pointer}.v3-report-choice.active{border-color:var(--gold);background:rgba(217,174,78,.14)}.v3-report-current{background:rgba(255,255,255,.05);border:1px solid rgba(217,174,78,.25);border-radius:10px;padding:11px;margin:10px 0}.v3-report-current p{margin:4px 0;font-size:12px}.v3-report-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.v3-report-actions button{width:100%}@media(max-width:480px){.v3-report-grid{grid-template-columns:1fr}.v3-report-actions{grid-template-columns:1fr}}
+.v3-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.68);z-index:100;display:flex;align-items:flex-end;justify-content:center;padding:12px}.v3-modal{width:min(720px,100%);max-height:92vh;overflow:auto;background:var(--bg-panel);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.45)}.v3-modal h2{font-family:'Fraunces',serif;margin:0 0 6px;color:#fff}.v3-close{float:right;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:6px 9px;cursor:pointer}.v3-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0}.v3-kpi{background:var(--bg-panel-2);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px}.v3-kpi b{display:block;font:600 24px 'Fraunces',serif;color:var(--gold)}.v3-kpi span{font-size:11px;color:rgba(255,255,255,.68)}.v3-section{margin-top:18px}.v3-section h3{font:600 15px 'Fraunces',serif;color:var(--gold);margin:0 0 9px}.v3-bar{height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:5px}.v3-bar>i{display:block;height:100%;background:var(--gold);border-radius:99px}.v3-row{background:rgba(255,255,255,.06);border-radius:9px;padding:9px 10px;margin:6px 0;font-size:12px}.v3-row strong{color:#fff}.v3-muted{color:rgba(255,255,255,.6)}.v3-badge{display:inline-block;border:1px solid var(--gold);border-radius:99px;padding:5px 8px;margin:3px;font-size:11px;color:var(--gold)}.v3-settings label{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px}.v3-settings input{width:18px;height:18px}.v3-progress{height:7px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin:7px 0 12px}.v3-progress i{display:block;height:100%;background:var(--gold);width:0}.v3-install{position:fixed;left:12px;right:12px;bottom:12px;z-index:90;background:var(--bg-panel-2);border:1px solid var(--gold);border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.35);font-size:12px}.v3-install button{margin-top:8px}.v3-route{border-left:3px solid var(--gold);padding-left:10px}.v3-due{color:#F3A9A0}.v3-small{font-size:11px}.v3-exam-breakdown{margin-top:10px;text-align:left}.v3-cat-chip{display:flex;justify-content:space-between;gap:8px;margin:5px 0;font-size:12px}
 @media(min-width:700px){.v3-modal-backdrop{align-items:center}.v3-modal{border-radius:18px}.v3-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.report-fab{position:fixed;right:14px;bottom:14px;z-index:80;background:var(--bg-panel-2);border:1px solid rgba(255,255,255,0.32);color:#fff;border-radius:999px;padding:9px 14px;font-size:12px;font-family:'IBM Plex Sans',sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.35);}
+.report-fab:active{transform:scale(0.96);}
+.report-issue-list{display:flex;flex-direction:column;gap:8px;}
+.report-issue-list .report-issue-btn{text-align:left;}
+.rp-detail-textarea{width:100%;box-sizing:border-box;margin-top:10px;}
 
 
 .v3-profile{display:grid;gap:12px}.v3-profile label{display:grid;gap:6px;font-size:13px;color:rgba(255,255,255,.75)}.v3-profile select,.v3-profile input{width:100%;box-sizing:border-box;padding:11px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:var(--bg-panel-2);color:var(--white);font:inherit}.v3-state-info{margin:10px 0 2px;padding:12px;border:1px solid rgba(217,174,78,.28);border-radius:10px;background:rgba(255,255,255,.05)}.v3-state-info-title{font:600 14px 'Fraunces',serif;color:var(--gold);margin:0 0 8px}.v3-state-info-row{font-size:12px;color:rgba(255,255,255,.8);margin:4px 0}.v3-state-info-row strong{color:#fff}.v3-answer-list{margin:6px 0 0;padding-left:20px;color:var(--white)}.v3-answer-list li{margin:3px 0}.v3-small{font-size:12px;line-height:1.5}.v3-modal select option{background:#18221d;color:#fff}
@@ -1167,7 +1172,7 @@ var LANGS = ['en','es','zh','tl','vi'];
 var LANG_NAMES = {en:'English',es:'Español',zh:'中文',tl:'Tagalog',vi:'Tiếng Việt'};
 var STRINGS = {
 en:{
-toolbarProgress:"Progress", toolbarState:"My state", toolbarReview:"Smart review", toolbarDaily:"Daily challenge", toolbarPrefs:"Preferences", toolbarInstall:"Install app", reportProblem:'Report a problem',reportShakeHint:'You can also shake your phone to open this menu.',commonProblems:'Common problems',reportQuestionWrong:'The app marked my answer as wrong',reportNoAnswerContext:'Answer a question first to report an answer problem.',reportProblemType:'Problem type',reportDetails:'Details (optional)',reportDetailsPlaceholder:'Tell us what happened…',reportSelectProblem:'Select a problem',reportAppFreezes:'The app freezes or stops responding',reportButtonNotWorking:'A button does not work',reportTranslation:'Translation or language problem',reportQuestionIncorrect:'Question or answer appears incorrect',reportStateInfo:'State or local information is incorrect',reportDisplay:'Layout or display problem',reportProgress:'My progress disappeared or is incorrect',reportInstallUpdate:'Installation or update problem',reportOther:'Other problem',reportSave:'Save report',reportSaved:'Report saved on this device.',reportExport:'Export reports',reportExportCsv:'Export CSV',reportExportJson:'Export JSON',reportCount:'Saved reports: {n}',reportStoredLocally:'Reports are saved on this device. Export them to keep a copy.',reportQuestion:'Question',reportYourAnswer:'Your answer',reportCorrectAnswers:'Correct answer(s)',reportLanguage:'App language',reportDate:'Date',reportCategory:'Category',reportMode:'Mode',reportNoReports:'No reports saved yet.',reportExported:'Reports exported.',reportPermissionTitle:'Shake to report',reportPermissionBody:'Motion access is needed to detect a shake on some phones.',reportEnableShake:'Enable shake detection',reportShakeEnabled:'Shake detection enabled.',languageButton:"Language",
+toolbarProgress:"Progress", toolbarState:"My state", toolbarReview:"Smart review", toolbarDaily:"Daily challenge", toolbarPrefs:"Preferences", toolbarInstall:"Install app", languageButton:"Language",
 dashCategory:"Performance by category", dashRoute:"Recommended path", dashWeak:"Questions to reinforce", dashAchievements:"Achievements", dashExams:"Exams", dashRecent:"Recent activity", answeredLabel:"Answered", accuracyLabel:"Accuracy", masteredLabel:"Mastered", xpForLevel:"XP to level {n}", noData:"No data yet.", playToRecommend:"Play some levels to generate recommendations.", answerQuestions:"Answer questions to build your path.", resetNewStats:"Reset new statistics", sounds:"Sounds", vibration:"Vibration", textSize:"Text size", normal:"Normal", large:"Large", veryLarge:"Very large", stateSaved:"State saved: {state}", selectState:"Select a state", installTitle:"Install app", installUnavailable:"Direct installation is not available in this browser.",
 profileTitle:"My state and local data", profileHelp:"Select your state so questions 23, 61 and 62 automatically use the corresponding answers. For question 29 you can save your representative name.", stateLabel:"State", repLabel:"My House representative (optional)", repPlaceholder:"E.g. your representative name", saveData:"Save data", stateInfoEmpty:"Select a state to see its data.", senatorsLabel:"Senators", governorLabel:"Governor", capitalLabel:"Capital", selectStateToast:"Select a state", stateSavedToast:"State saved: {state}",
 title:"Uncle Sam Says",
@@ -1190,9 +1195,10 @@ statIntentos:"Lives", statPuntos:"Total points", statRacha:"Current streak", sta
 toastMilestone:"New best streak: {n}", toastRegen:"Streak of {n}: you get a life back",
 qMeta:"USCIS #{official} \u00b7 {cat} \u00b7 {i}/{n}", hintPrefix:"Hint: {mask}",
 stampApprove:"Correct", stampRetry:"Review this",
-answerPlaceholder:"Type your answer in English", comprobar:"Check",answerCheckError:"The answer could not be checked. Please try again.",
+answerPlaceholder:"Type your answer in English", comprobar:"Check",
 resultCorrect:"You got it", resultWrong:"Time to review this one",
 acceptedAnswer:"Accepted answer", livesRemaining:"Lives left", continueBtn:"Continue",
+reportProblemBtn:"Report a problem", reportProblemTitle:"Report a problem", issueNotLoading:"App won't load or stays blank", issueProgressLost:"My progress wasn't saved", issueWrongAnswer:"A question or answer looks wrong", issueTranslation:"Incorrect text or translation", issueVisual:"Visual or layout problem", issueCrash:"App freezes or closes unexpectedly", issueInstall:"Problem installing the app", issueOther:"Other problem", reportDetailsPlaceholder:"Describe the problem (optional)", reportSendBtn:"Send report", reportBackBtn:"Back", reportSentToast:"Thanks! Report sent.", reportQuestionBtn:"Report question", reportQuestionSentToast:"Thanks, this question was reported.", reportsSectionTitle:"Reports", exportReportsBtn:"Export reports (CSV)", exportReportsEmpty:"No reports to export yet.", exportReportsDoneToast:"Reports exported.", reportsCountLabel:"{n} saved reports",
 expertPrompt:"Good. Now explain in your own words why this is the correct answer:",
 expertTextareaPh:"Write your explanation...", expertRefBtn:"See reference explanation",
 expertRefLabel:"Reference explanation", expertSelfCheck:"Did your explanation capture the main idea?",
@@ -1226,7 +1232,7 @@ dailyStreakStart:"Start your daily streak today",
 footnote:"Questions and answers from the official USCIS question bank, 2025 version (128 questions). Answers about current officials (president, vice president, governor, etc.) can change \u2014 confirm them at uscis.gov/citizenship/testupdates before your interview. The free-text checker compares against a single accepted phrase per question, so an occasional valid variant may not be recognized \u2014 the official answer is always shown so you can compare it. Your progress (stars, points, and expert mode) saves automatically in this browser \u2014 this works best opening the file directly in Chrome; if you're only viewing it in the chat preview, it may not save between sessions."
 },
 es:{
-toolbarProgress:"Mi progreso", toolbarState:"Mi estado", toolbarReview:"Repaso inteligente", toolbarDaily:"Reto diario", toolbarPrefs:"Preferencias", toolbarInstall:"Instalar app", reportProblem:'Reportar un problema',reportShakeHint:'También puedes agitar el celular para abrir este menú.',commonProblems:'Problemas comunes',reportQuestionWrong:'La app tomó mi respuesta como equivocada',reportNoAnswerContext:'Primero responde una pregunta para reportar un problema con una respuesta.',reportProblemType:'Tipo de problema',reportDetails:'Detalles (opcional)',reportDetailsPlaceholder:'Cuéntanos qué ocurrió…',reportSelectProblem:'Selecciona un problema',reportAppFreezes:'La app se congela o deja de responder',reportButtonNotWorking:'Un botón no funciona',reportTranslation:'Problema de traducción o idioma',reportQuestionIncorrect:'La pregunta o respuesta parece incorrecta',reportStateInfo:'La información del estado o local es incorrecta',reportDisplay:'Problema de diseño o visualización',reportProgress:'Mi progreso desapareció o es incorrecto',reportInstallUpdate:'Problema de instalación o actualización',reportOther:'Otro problema',reportSave:'Guardar reporte',reportSaved:'Reporte guardado en este dispositivo.',reportExport:'Exportar reportes',reportExportCsv:'Exportar CSV',reportExportJson:'Exportar JSON',reportCount:'Reportes guardados: {n}',reportStoredLocally:'Los reportes se guardan en este dispositivo. Expórtalos para conservar una copia.',reportQuestion:'Pregunta',reportYourAnswer:'Tu respuesta',reportCorrectAnswers:'Respuesta(s) correcta(s)',reportLanguage:'Idioma de la app',reportDate:'Fecha',reportCategory:'Categoría',reportMode:'Modo',reportNoReports:'Todavía no hay reportes guardados.',reportExported:'Reportes exportados.',reportPermissionTitle:'Agitar para reportar',reportPermissionBody:'En algunos celulares se necesita permiso para detectar el movimiento.',reportEnableShake:'Activar detección por movimiento',reportShakeEnabled:'Detección por movimiento activada.',languageButton:"Idioma",
+toolbarProgress:"Mi progreso", toolbarState:"Mi estado", toolbarReview:"Repaso inteligente", toolbarDaily:"Reto diario", toolbarPrefs:"Preferencias", toolbarInstall:"Instalar app", languageButton:"Idioma",
 dashCategory:"Rendimiento por categoría", dashRoute:"Ruta recomendada", dashWeak:"Preguntas a reforzar", dashAchievements:"Logros", dashExams:"Exámenes", dashRecent:"Actividad reciente", answeredLabel:"Respondidas", accuracyLabel:"Precisión", masteredLabel:"Dominadas", xpForLevel:"XP para nivel {n}", noData:"Sin datos todavía.", playToRecommend:"Juega algunos niveles para generar recomendaciones.", answerQuestions:"Responde preguntas para construir tu ruta.", resetNewStats:"Restablecer estadísticas nuevas", sounds:"Sonidos", vibration:"Vibración", textSize:"Tamaño de texto", normal:"Normal", large:"Grande", veryLarge:"Muy grande", stateSaved:"Estado guardado: {state}", selectState:"Selecciona un estado", installTitle:"Instalar app", installUnavailable:"La instalación directa no está disponible en este navegador.",
 profileTitle:"Mi estado y datos locales", profileHelp:"Selecciona tu estado para que las preguntas 23, 61 y 62 usen automáticamente las respuestas correspondientes. Para la pregunta 29 puedes guardar el nombre de tu representante.", stateLabel:"Estado", repLabel:"Mi representante de la Cámara (opcional)", repPlaceholder:"Ej. nombre de tu representante", saveData:"Guardar datos", stateInfoEmpty:"'+t('stateInfoEmpty')+'", senatorsLabel:"Senadores", governorLabel:"Gobernador", capitalLabel:"Capital", selectStateToast:"Selecciona un estado", stateSavedToast:"Estado guardado: {state}",
 title:"Uncle Sam Says",
@@ -1249,9 +1255,10 @@ statIntentos:"Intentos", statPuntos:"Puntos totales", statRacha:"Racha actual", 
 toastMilestone:"Nueva racha récord: {n}", toastRegen:"Racha de {n}: recuperas un intento",
 qMeta:"USCIS #{official} · {cat} · {i}/{n}", hintPrefix:"Pista: {mask}",
 stampApprove:"Aprobado", stampRetry:"A repasar",
-answerPlaceholder:"Escribe tu respuesta en inglés", comprobar:"Comprobar",answerCheckError:"No se pudo comprobar la respuesta. Inténtalo de nuevo.",
+answerPlaceholder:"Escribe tu respuesta en inglés", comprobar:"Comprobar",
 resultCorrect:"Acertaste", resultWrong:"Hay que repasar esta",
 acceptedAnswer:"Respuesta aceptada", livesRemaining:"Vidas restantes", continueBtn:"Continuar",
+reportProblemBtn:"Reportar un problema", reportProblemTitle:"Reportar un problema", issueNotLoading:"La app no carga o se queda en blanco", issueProgressLost:"Mi progreso no se guardó", issueWrongAnswer:"Una pregunta o respuesta parece incorrecta", issueTranslation:"Texto o traducción incorrectos", issueVisual:"Problema visual o de diseño", issueCrash:"La app se congela o se cierra sola", issueInstall:"Problema al instalar la app", issueOther:"Otro problema", reportDetailsPlaceholder:"Describe el problema (opcional)", reportSendBtn:"Enviar reporte", reportBackBtn:"Atrás", reportSentToast:"¡Gracias! Reporte enviado.", reportQuestionBtn:"Reportar pregunta", reportQuestionSentToast:"Gracias, se reportó esta pregunta.", reportsSectionTitle:"Reportes", exportReportsBtn:"Exportar reportes (CSV)", exportReportsEmpty:"Todavía no hay reportes para exportar.", exportReportsDoneToast:"Reportes exportados.", reportsCountLabel:"{n} reportes guardados",
 expertPrompt:"Bien. Ahora explica en tus palabras por qué esta es la respuesta correcta:",
 expertTextareaPh:"Escribe tu explicación...", expertRefBtn:"Ver explicación de referencia",
 expertRefLabel:"Explicación de referencia", expertSelfCheck:"¿Tu explicación capturó la idea principal?",
@@ -1285,7 +1292,7 @@ dailyStreakStart:"Empieza tu racha diaria practicando hoy",
 footnote:"Preguntas y respuestas del banco oficial de USCIS, versión 2025 (128 preguntas). Las respuestas sobre funcionarios en turno (presidente, vicepresidente, gobernador, etc.) pueden cambiar — confírmalas en uscis.gov/citizenship/testupdates antes de tu entrevista. El corrector de texto libre compara contra una sola frase aceptada por pregunta, así que alguna variante válida ocasionalmente puede no reconocerse — la respuesta oficial siempre se muestra para que la compares. Tu progreso (estrellas, puntos y modo experto) se guarda automáticamente en este navegador — funciona bien abriendo el archivo directamente en Chrome; si solo lo ves en la vista previa del chat, podría no guardarse entre sesiones."
 },
 zh:{
-toolbarProgress:"我的进度", toolbarState:"我的州", toolbarReview:"智能复习", toolbarDaily:"每日挑战", toolbarPrefs:"偏好设置", toolbarInstall:"安装应用", reportProblem:'报告问题',reportShakeHint:'你也可以摇动手机打开此菜单。',commonProblems:'常见问题',reportQuestionWrong:'应用把我的答案判错了',reportNoAnswerContext:'请先回答一个问题，再报告答案问题。',reportProblemType:'问题类型',reportDetails:'详细信息（可选）',reportDetailsPlaceholder:'请告诉我们发生了什么…',reportSelectProblem:'选择问题',reportAppFreezes:'应用卡住或没有响应',reportButtonNotWorking:'按钮无法使用',reportTranslation:'翻译或语言问题',reportQuestionIncorrect:'题目或答案似乎不正确',reportStateInfo:'州或地方信息不正确',reportDisplay:'布局或显示问题',reportProgress:'我的进度消失或不正确',reportInstallUpdate:'安装或更新问题',reportOther:'其他问题',reportSave:'保存报告',reportSaved:'报告已保存在此设备上。',reportExport:'导出报告',reportExportCsv:'导出 CSV',reportExportJson:'导出 JSON',reportCount:'已保存报告：{n}',reportStoredLocally:'报告保存在此设备上。请导出以保留副本。',reportQuestion:'问题',reportYourAnswer:'你的答案',reportCorrectAnswers:'正确答案',reportLanguage:'应用语言',reportDate:'日期',reportCategory:'类别',reportMode:'模式',reportNoReports:'还没有保存的报告。',reportExported:'报告已导出。',reportPermissionTitle:'摇动手机来报告',reportPermissionBody:'某些手机需要运动权限才能检测摇动。',reportEnableShake:'启用摇动检测',reportShakeEnabled:'摇动检测已启用。',languageButton:"语言",
+toolbarProgress:"我的进度", toolbarState:"我的州", toolbarReview:"智能复习", toolbarDaily:"每日挑战", toolbarPrefs:"偏好设置", toolbarInstall:"安装应用", languageButton:"语言",
 dashCategory:"按类别表现", dashRoute:"推荐路径", dashWeak:"需要加强的问题", dashAchievements:"成就", dashExams:"考试", dashRecent:"最近活动", answeredLabel:"已回答", accuracyLabel:"正确率", masteredLabel:"已掌握", xpForLevel:"距离等级 {n} 还需 XP", noData:"暂无数据。", playToRecommend:"完成一些关卡以生成建议。", answerQuestions:"回答问题以建立你的学习路径。", resetNewStats:"重置新统计", sounds:"声音", vibration:"振动", textSize:"文字大小", normal:"正常", large:"大", veryLarge:"特大", stateSaved:"已保存州：{state}", selectState:"选择一个州", installTitle:"安装应用", installUnavailable:"此浏览器不支持直接安装。",
 profileTitle:"我的州和本地信息", profileHelp:"选择你的州，让第23、61和62题自动使用相应答案。第29题可以保存你的众议员姓名。", stateLabel:"州", repLabel:"我的众议员（可选）", repPlaceholder:"例如：众议员姓名", saveData:"保存数据", stateInfoEmpty:"选择一个州以查看其信息。", senatorsLabel:"参议员", governorLabel:"州长", capitalLabel:"首府", selectStateToast:"请选择一个州", stateSavedToast:"已保存州：{state}",
 title:"Uncle Sam Says",
@@ -1308,9 +1315,10 @@ statIntentos:"生命值", statPuntos:"总积分", statRacha:"当前连胜", stat
 toastMilestone:"新纪录连胜：{n}", toastRegen:"连胜{n}次：恢复一条生命",
 qMeta:"USCIS第{official}题 · {cat} · {i}/{n}", hintPrefix:"提示：{mask}",
 stampApprove:"回答正确", stampRetry:"需要复习",
-answerPlaceholder:"用英语输入你的答案", comprobar:"检查",answerCheckError:"无法检查答案，请再试一次。",
+answerPlaceholder:"用英语输入你的答案", comprobar:"检查",
 resultCorrect:"答对了", resultWrong:"这道题需要复习",
 acceptedAnswer:"参考答案", livesRemaining:"剩余生命", continueBtn:"继续",
+reportProblemBtn:"报告问题", reportProblemTitle:"报告问题", issueNotLoading:"应用无法加载或显示空白", issueProgressLost:"我的进度没有保存", issueWrongAnswer:"某个问题或答案似乎有误", issueTranslation:"文本或翻译有误", issueVisual:"显示或排版问题", issueCrash:"应用卡死或自动关闭", issueInstall:"安装应用时出现问题", issueOther:"其他问题", reportDetailsPlaceholder:"描述问题（可选）", reportSendBtn:"发送报告", reportBackBtn:"返回", reportSentToast:"谢谢！报告已发送。", reportQuestionBtn:"举报此题", reportQuestionSentToast:"谢谢，已举报此题。", reportsSectionTitle:"报告", exportReportsBtn:"导出报告（CSV）", exportReportsEmpty:"暂无可导出的报告。", exportReportsDoneToast:"报告已导出。", reportsCountLabel:"已保存 {n} 份报告",
 expertPrompt:"很好。现在请用你自己的话解释为什么这是正确答案：",
 expertTextareaPh:"写下你的解释……", expertRefBtn:"查看参考解释",
 expertRefLabel:"参考解释", expertSelfCheck:"你的解释抓住主要意思了吗？",
@@ -1344,7 +1352,7 @@ dailyStreakStart:"今天开始你的每日连胜",
 footnote:"题目和答案来自美国公民及移民服务局（USCIS）官方题库，2025版（128题）。关于现任官员的答案（总统、副总统、州长等）可能会变化——请在面试前到 uscis.gov/citizenship/testupdates 核实。自由问答的判分只对照每题的一个参考答案，偶尔可能无法识别其他有效说法——系统会始终显示官方答案供你对照。你的进度（星星、积分和专家模式）会自动保存在这个浏览器中——直接在Chrome中打开这个文件效果最好；如果你只是在聊天的预览里查看，两次使用之间可能无法保存进度。"
 },
 tl:{
-toolbarProgress:"Aking progreso", toolbarState:"Aking estado", toolbarReview:"Matalinong review", toolbarDaily:"Araw-araw na hamon", toolbarPrefs:"Mga preference", toolbarInstall:"I-install ang app", reportProblem:'Mag-report ng problema',reportShakeHint:'Maaari mo ring alugin ang telepono para buksan ang menu na ito.',commonProblems:'Mga karaniwang problema',reportQuestionWrong:'Minarkahan ng app na mali ang sagot ko',reportNoAnswerContext:'Sumagot muna ng tanong para makapag-report ng problema sa sagot.',reportProblemType:'Uri ng problema',reportDetails:'Mga detalye (opsyonal)',reportDetailsPlaceholder:'Sabihin kung ano ang nangyari…',reportSelectProblem:'Pumili ng problema',reportAppFreezes:'Nag-freeze o hindi tumutugon ang app',reportButtonNotWorking:'Hindi gumagana ang isang button',reportTranslation:'Problema sa pagsasalin o wika',reportQuestionIncorrect:'Mukhang mali ang tanong o sagot',reportStateInfo:'Mali ang impormasyon ng estado o lokal',reportDisplay:'Problema sa layout o display',reportProgress:'Nawala o mali ang progress ko',reportInstallUpdate:'Problema sa pag-install o update',reportOther:'Ibang problema',reportSave:'I-save ang report',reportSaved:'Nai-save ang report sa device na ito.',reportExport:'I-export ang mga report',reportExportCsv:'I-export ang CSV',reportExportJson:'I-export ang JSON',reportCount:'Mga naka-save na report: {n}',reportStoredLocally:'Naka-save ang mga report sa device na ito. I-export ang mga ito para may kopya.',reportQuestion:'Tanong',reportYourAnswer:'Iyong sagot',reportCorrectAnswers:'Tamang sagot',reportLanguage:'Wika ng app',reportDate:'Petsa',reportCategory:'Kategorya',reportMode:'Mode',reportNoReports:'Wala pang naka-save na report.',reportExported:'Na-export na ang mga report.',reportPermissionTitle:'I-shake para mag-report',reportPermissionBody:'Sa ilang telepono, kailangan ng motion permission para makita ang pag-alog.',reportEnableShake:'I-enable ang shake detection',reportShakeEnabled:'Naka-enable ang shake detection.',languageButton:"Wika",
+toolbarProgress:"Aking progreso", toolbarState:"Aking estado", toolbarReview:"Matalinong review", toolbarDaily:"Araw-araw na hamon", toolbarPrefs:"Mga preference", toolbarInstall:"I-install ang app", languageButton:"Wika",
 dashCategory:"Pagganap ayon sa kategorya", dashRoute:"Inirerekomendang landas", dashWeak:"Mga tanong na dapat palakasin", dashAchievements:"Mga tagumpay", dashExams:"Mga pagsusulit", dashRecent:"Kamakailang aktibidad", answeredLabel:"Nasagutan", accuracyLabel:"Katumpakan", masteredLabel:"Natutunan", xpForLevel:"XP para sa level {n}", noData:"Wala pang datos.", playToRecommend:"Maglaro ng ilang level para makabuo ng rekomendasyon.", answerQuestions:"Sumagot ng mga tanong para mabuo ang iyong landas.", resetNewStats:"I-reset ang bagong statistics", sounds:"Mga tunog", vibration:"Vibration", textSize:"Laki ng teksto", normal:"Normal", large:"Malaki", veryLarge:"Napakalaki", stateSaved:"Nai-save ang estado: {state}", selectState:"Pumili ng estado", installTitle:"I-install ang app", installUnavailable:"Hindi available ang direktang pag-install sa browser na ito.",
 profileTitle:"Aking estado at lokal na datos", profileHelp:"Piliin ang iyong estado para awtomatikong gamitin ng mga tanong 23, 61 at 62 ang kaukulang sagot. Para sa tanong 29, maaari mong i-save ang pangalan ng iyong kinatawan.", stateLabel:"Estado", repLabel:"Aking kinatawan sa House (opsyonal)", repPlaceholder:"Hal. pangalan ng iyong kinatawan", saveData:"I-save ang datos", stateInfoEmpty:"Pumili ng estado para makita ang datos nito.", senatorsLabel:"Mga senador", governorLabel:"Gobernador", capitalLabel:"Kapitolyo", selectStateToast:"Pumili ng estado", stateSavedToast:"Nai-save ang estado: {state}",
 title:"Uncle Sam Says",
@@ -1367,9 +1375,10 @@ statIntentos:"Buhay", statPuntos:"Kabuuang puntos", statRacha:"Kasalukuyang stre
 toastMilestone:"Bagong pinakamahabang streak: {n}", toastRegen:"Streak na {n}: nakabawi ka ng isang buhay",
 qMeta:"USCIS #{official} · {cat} · {i}/{n}", hintPrefix:"Pahiwatig: {mask}",
 stampApprove:"Tama", stampRetry:"Kailangang balikan",
-answerPlaceholder:"Isulat ang sagot mo sa Ingles", comprobar:"Suriin",answerCheckError:"Hindi masuri ang sagot. Subukan muli.",
+answerPlaceholder:"Isulat ang sagot mo sa Ingles", comprobar:"Suriin",
 resultCorrect:"Tama ka", resultWrong:"Kailangan mong balikan ito",
 acceptedAnswer:"Tanggap na sagot", livesRemaining:"Natitirang buhay", continueBtn:"Magpatuloy",
+reportProblemBtn:"Mag-ulat ng problema", reportProblemTitle:"Mag-ulat ng problema", issueNotLoading:"Hindi naglo-load o blangko ang app", issueProgressLost:"Hindi na-save ang aking progreso", issueWrongAnswer:"Mukhang mali ang isang tanong o sagot", issueTranslation:"Mali ang teksto o pagsasalin", issueVisual:"Problema sa itsura o disenyo", issueCrash:"Nag-freeze o nagsasara ang app", issueInstall:"Problema sa pag-install ng app", issueOther:"Ibang problema", reportDetailsPlaceholder:"Ilarawan ang problema (opsyonal)", reportSendBtn:"Ipadala ang ulat", reportBackBtn:"Bumalik", reportSentToast:"Salamat! Naipadala ang ulat.", reportQuestionBtn:"I-report ang tanong", reportQuestionSentToast:"Salamat, na-report na ang tanong na ito.", reportsSectionTitle:"Mga Ulat", exportReportsBtn:"I-export ang mga ulat (CSV)", exportReportsEmpty:"Wala pang ulat na ie-export.", exportReportsDoneToast:"Na-export ang mga ulat.", reportsCountLabel:"{n} naka-save na ulat",
 expertPrompt:"Mahusay. Ngayon ipaliwanag mo sa sarili mong salita kung bakit ito ang tamang sagot:",
 expertTextareaPh:"Isulat ang iyong paliwanag...", expertRefBtn:"Tingnan ang reference na paliwanag",
 expertRefLabel:"Reference na paliwanag", expertSelfCheck:"Nakuha ba ng paliwanag mo ang pangunahing ideya?",
@@ -1403,7 +1412,7 @@ dailyStreakStart:"Simulan ang iyong daily streak ngayon",
 footnote:"Mga tanong at sagot mula sa opisyal na question bank ng USCIS, bersyon 2025 (128 na tanong). Ang mga sagot tungkol sa kasalukuyang opisyal (pangulo, bise presidente, gobernador, atbp.) ay maaaring magbago — kumpirmahin ito sa uscis.gov/citizenship/testupdates bago ang iyong interview. Ang free-text checker ay ikinukumpara lang sa isang katanggap-tanggap na parirala bawat tanong, kaya paminsan-minsan ay maaaring hindi makilala ang ibang wastong sagot — palaging ipinapakita ang opisyal na sagot para maihambing mo. Ang iyong progreso (bituin, puntos, at expert mode) ay awtomatikong nase-save sa browser na ito — pinakamainam itong gamitin sa pagbukas ng file nang direkta sa Chrome; kung sa preview lang ng chat mo ito nakikita, posibleng hindi ito mase-save sa pagitan ng mga sesyon."
 },
 vi:{
-toolbarProgress:"Tiến độ", toolbarState:"Bang của tôi", toolbarReview:"Ôn tập thông minh", toolbarDaily:"Thử thách hằng ngày", toolbarPrefs:"Tùy chọn", toolbarInstall:"Cài đặt ứng dụng", reportProblem:'Báo cáo sự cố',reportShakeHint:'Bạn cũng có thể lắc điện thoại để mở menu này.',commonProblems:'Sự cố thường gặp',reportQuestionWrong:'Ứng dụng chấm câu trả lời của tôi là sai',reportNoAnswerContext:'Hãy trả lời một câu hỏi trước khi báo cáo vấn đề về câu trả lời.',reportProblemType:'Loại sự cố',reportDetails:'Chi tiết (tùy chọn)',reportDetailsPlaceholder:'Hãy cho biết điều gì đã xảy ra…',reportSelectProblem:'Chọn sự cố',reportAppFreezes:'Ứng dụng bị treo hoặc không phản hồi',reportButtonNotWorking:'Một nút không hoạt động',reportTranslation:'Vấn đề về bản dịch hoặc ngôn ngữ',reportQuestionIncorrect:'Câu hỏi hoặc đáp án có vẻ không đúng',reportStateInfo:'Thông tin về bang hoặc địa phương không đúng',reportDisplay:'Vấn đề về bố cục hoặc hiển thị',reportProgress:'Tiến trình của tôi bị mất hoặc không đúng',reportInstallUpdate:'Vấn đề khi cài đặt hoặc cập nhật',reportOther:'Sự cố khác',reportSave:'Lưu báo cáo',reportSaved:'Báo cáo đã được lưu trên thiết bị này.',reportExport:'Xuất báo cáo',reportExportCsv:'Xuất CSV',reportExportJson:'Xuất JSON',reportCount:'Báo cáo đã lưu: {n}',reportStoredLocally:'Báo cáo được lưu trên thiết bị này. Hãy xuất để giữ một bản sao.',reportQuestion:'Câu hỏi',reportYourAnswer:'Câu trả lời của bạn',reportCorrectAnswers:'Đáp án đúng',reportLanguage:'Ngôn ngữ ứng dụng',reportDate:'Ngày',reportCategory:'Danh mục',reportMode:'Chế độ',reportNoReports:'Chưa có báo cáo nào được lưu.',reportExported:'Đã xuất báo cáo.',reportPermissionTitle:'Lắc để báo cáo',reportPermissionBody:'Một số điện thoại cần quyền chuyển động để phát hiện thao tác lắc.',reportEnableShake:'Bật phát hiện lắc',reportShakeEnabled:'Đã bật phát hiện lắc.',languageButton:"Ngôn ngữ",
+toolbarProgress:"Tiến độ", toolbarState:"Bang của tôi", toolbarReview:"Ôn tập thông minh", toolbarDaily:"Thử thách hằng ngày", toolbarPrefs:"Tùy chọn", toolbarInstall:"Cài đặt ứng dụng", languageButton:"Ngôn ngữ",
 dashCategory:"Hiệu suất theo danh mục", dashRoute:"Lộ trình đề xuất", dashWeak:"Câu hỏi cần củng cố", dashAchievements:"Thành tích", dashExams:"Bài thi", dashRecent:"Hoạt động gần đây", answeredLabel:"Đã trả lời", accuracyLabel:"Độ chính xác", masteredLabel:"Đã nắm vững", xpForLevel:"XP để lên cấp {n}", noData:"Chưa có dữ liệu.", playToRecommend:"Hãy chơi vài cấp để tạo đề xuất.", answerQuestions:"Trả lời câu hỏi để xây dựng lộ trình.", resetNewStats:"Đặt lại thống kê mới", sounds:"Âm thanh", vibration:"Rung", textSize:"Cỡ chữ", normal:"Bình thường", large:"Lớn", veryLarge:"Rất lớn", stateSaved:"Đã lưu bang: {state}", selectState:"Chọn một bang", installTitle:"Cài đặt ứng dụng", installUnavailable:"Trình duyệt này không hỗ trợ cài đặt trực tiếp.",
 profileTitle:"Bang và dữ liệu địa phương", profileHelp:"Chọn bang của bạn để câu 23, 61 và 62 tự động dùng câu trả lời tương ứng. Với câu 29, bạn có thể lưu tên dân biểu của mình.", stateLabel:"Bang", repLabel:"Dân biểu Hạ viện của tôi (tùy chọn)", repPlaceholder:"Ví dụ: tên dân biểu của bạn", saveData:"Lưu dữ liệu", stateInfoEmpty:"Chọn một bang để xem thông tin.", senatorsLabel:"Thượng nghị sĩ", governorLabel:"Thống đốc", capitalLabel:"Thủ phủ", selectStateToast:"Hãy chọn một bang", stateSavedToast:"Đã lưu bang: {state}",
 title:"Uncle Sam Says",
@@ -1426,9 +1435,10 @@ statIntentos:"Mạng", statPuntos:"Tổng điểm", statRacha:"Chuỗi hiện t�
 toastMilestone:"Kỷ lục chuỗi mới: {n}", toastRegen:"Chuỗi {n}: bạn được hoàn lại một mạng",
 qMeta:"USCIS #{official} · {cat} · {i}/{n}", hintPrefix:"Gợi ý: {mask}",
 stampApprove:"Chính xác", stampRetry:"Cần ôn lại",
-answerPlaceholder:"Nhập câu trả lời bằng tiếng Anh", comprobar:"Kiểm tra",answerCheckError:"Không thể kiểm tra câu trả lời. Hãy thử lại.",
+answerPlaceholder:"Nhập câu trả lời bằng tiếng Anh", comprobar:"Kiểm tra",
 resultCorrect:"Bạn đã đúng", resultWrong:"Cần ôn lại câu này",
 acceptedAnswer:"Đáp án được chấp nhận", livesRemaining:"Số mạng còn lại", continueBtn:"Tiếp tục",
+reportProblemBtn:"Báo cáo sự cố", reportProblemTitle:"Báo cáo sự cố", issueNotLoading:"Ứng dụng không tải hoặc bị trắng màn hình", issueProgressLost:"Tiến trình của tôi không được lưu", issueWrongAnswer:"Một câu hỏi hoặc đáp án có vẻ sai", issueTranslation:"Văn bản hoặc bản dịch không chính xác", issueVisual:"Sự cố về giao diện hoặc bố cục", issueCrash:"Ứng dụng bị đơ hoặc tự đóng", issueInstall:"Sự cố khi cài đặt ứng dụng", issueOther:"Sự cố khác", reportDetailsPlaceholder:"Mô tả sự cố (không bắt buộc)", reportSendBtn:"Gửi báo cáo", reportBackBtn:"Quay lại", reportSentToast:"Cảm ơn! Đã gửi báo cáo.", reportQuestionBtn:"Báo cáo câu hỏi", reportQuestionSentToast:"Cảm ơn, câu hỏi này đã được báo cáo.", reportsSectionTitle:"Báo cáo", exportReportsBtn:"Xuất báo cáo (CSV)", exportReportsEmpty:"Chưa có báo cáo nào để xuất.", exportReportsDoneToast:"Đã xuất báo cáo.", reportsCountLabel:"{n} báo cáo đã lưu",
 expertPrompt:"Tốt lắm. Bây giờ hãy giải thích bằng lời của bạn tại sao đây là đáp án đúng:",
 expertTextareaPh:"Viết lời giải thích của bạn...", expertRefBtn:"Xem giải thích tham khảo",
 expertRefLabel:"Giải thích tham khảo", expertSelfCheck:"Lời giải thích của bạn có nêu được ý chính không?",
@@ -1521,6 +1531,7 @@ var generalReviewMenuOpen=false;
 var GENERAL_REVIEW_LEVEL={questions:[],stars:0,expertDone:false,streakRecord:0,timeAttackRecord:0,worldIndex:0,levelIndex:0,flatIdx:-1,isGeneralReview:true};
 var attempts=MAX_ATTEMPTS, streak=0, roundBestStreak=0, bestStreakEver=0, roundCorrect=0, totalPoints=0, roundPoints=0;
 var finished=false, answered=false, toastTimer=null, sessionActive=false, abortedNotice=false;
+var lastUserAnswerText='';
 
 function shuffle(a){
 var arr=a.slice();
@@ -2051,7 +2062,6 @@ if(m.kind==='mc'){
 var correctText=randomAcceptedAnswer(item);
 var wrongPool=pickDistractors(item,m.options-1);
 var opts=shuffle([correctText].concat(wrongPool));
-lastQuestionOptions=opts.slice();
 opts.forEach(function(optText){
 var b=document.createElement('button');
 b.className='option-btn';
@@ -2060,7 +2070,6 @@ b.onclick=function(){ selectOption(item,optText,b,c); };
 c.appendChild(b);
 });
 }else if(m.kind==='expert'){
-lastQuestionOptions=acceptedAnswers(item).slice();
 renderExpertStep1(item,c);
 }else{
 var row=document.createElement('div');
@@ -2070,10 +2079,8 @@ input.type='text';
 input.className='answer-input';
 input.placeholder=t('answerPlaceholder');
 input.autocomplete='off';
-lastQuestionOptions=acceptedAnswers(item).slice();
 var btn=document.createElement('button');
 btn.className='btn-check';
-btn.type='button';
 btn.textContent=t('comprobar');
 input.addEventListener('keydown',function(e){ if(e.key==='Enter'){ submitTyped(item,input,btn,m); } });
 btn.onclick=function(){ submitTyped(item,input,btn,m); };
@@ -2092,7 +2099,7 @@ clearTimeout(timeAttackHandle);
 var accepted=acceptedAnswers(item);
 var normChoice=normalize(chosenText).replace(/\([^)]*\)/g,'').trim();
 var correct = accepted.some(function(a){return normalize(a).replace(/\([^)]*\)/g,'').trim()===normChoice;});
-rememberAnswerForReport(item,chosenText,correct);
+lastUserAnswerText=chosenText;
 Array.prototype.forEach.call(container.children,function(b){
  b.disabled=true;
  var bn=normalize(b.textContent).replace(/\([^)]*\)/g,'').trim();
@@ -2109,20 +2116,12 @@ if(answered) return;
 if(!ensureProfile(item)) return;
 var val=input.value.trim();
 if(!val) return;
-/* Calculate the result before locking the question. This prevents a failed
-   checker/report hook from leaving the question permanently unresponsive. */
-var correct=false;
-try{ correct=isAcceptedText(val,item,m.strictness); }
-catch(e){ console.error('Answer checker error:',e); try{ toast(t('answerCheckError')); }catch(_e){} return; }
 answered=true;
-try{ rememberAnswerForReport(item,val,correct); }catch(e){ console.warn('Report context error:',e); }
+var correct=isCorrectFreeText(val,item.a,m.strictness,item);
+lastUserAnswerText=val;
 input.disabled=true;
 btn.disabled=true;
-try{ mark(correct); }
-catch(e){
-    console.error('Result handler error:',e);
-    try{ setTimeout(function(){ if(!document.querySelector('#controls .result-panel')){ try{ showResultPanel(correct); }catch(_e){ console.error('Fallback result panel error:',_e); } } },0); }catch(_e){}
-  }
+mark(correct);
 }
 
 function renderExpertStep1(item,c){
@@ -2135,7 +2134,6 @@ input.placeholder=t('answerPlaceholder');
 input.autocomplete='off';
 var btn=document.createElement('button');
 btn.className='btn-check';
-btn.type='button';
 btn.textContent=t('comprobar');
 input.addEventListener('keydown',function(e){ if(e.key==='Enter'){ submitExpertAnswer(item,input,btn,c); } });
 btn.onclick=function(){ submitExpertAnswer(item,input,btn,c); };
@@ -2149,18 +2147,13 @@ if(answered) return;
 if(!ensureProfile(item)) return;
 var val=input.value.trim();
 if(!val) return;
-var correct=false;
-try{ correct=isAcceptedText(val,item,'hard'); }
-catch(e){ console.error('Expert answer checker error:',e); try{ toast(t('answerCheckError')); }catch(_e){} return; }
-try{ rememberAnswerForReport(item,val,correct); }catch(e){ console.warn('Report context error:',e); }
+var correct=isCorrectFreeText(val,item.a,'hard',item);
+lastUserAnswerText=val;
 input.disabled=true;
 btn.disabled=true;
 if(!correct){
 answered=true;
-try{ mark(false); }catch(e){
-    console.error('Expert result handler error:',e);
-    try{ setTimeout(function(){ if(!document.querySelector('#controls .result-panel')){ try{ showResultPanel(false); }catch(_e){ console.error('Fallback expert result panel error:',_e); } } },0); }catch(_e){}
-  }
+mark(false);
 return;
 }
 renderExpertStep2(item,c);
@@ -2175,7 +2168,6 @@ ta.placeholder=t('expertTextareaPh');
 ta.rows=3;
 var btn2=document.createElement('button');
 btn2.className='wide btn-check';
-btn2.type='button';
 btn2.textContent=t('expertRefBtn');
 btn2.onclick=function(){
 if(ta.value.trim().length<10) return;
@@ -2354,13 +2346,6 @@ var whyBox=document.createElement('div');
 whyBox.style.marginTop='10px';
 whyBox.innerHTML='<p class="panel-answer-label">'+t('whyLabel')+'</p><p class="panel-answer-value" style="font-size:14px;font-weight:400;">'+whyText(item)+'</p>';
 panel.appendChild(whyBox);
-var reportBtn=document.createElement('button');
-reportBtn.className='wide btn-map';
-reportBtn.type='button';
-reportBtn.style.marginTop='10px';
-reportBtn.textContent=reportQuestionButtonLabel();
-reportBtn.onclick=function(){reportCurrentQuestion();};
-panel.appendChild(reportBtn);
 var livesWrap=document.createElement('div');
 livesWrap.className='result-lives';
 var livesLabel=document.createElement('p');
@@ -2381,6 +2366,14 @@ btn.className='wide btn-reveal';
 btn.textContent=t('continueBtn');
 btn.onclick=function(){ advanceAfterResult(); };
 panel.appendChild(btn);
+var btnReportQ=document.createElement('button');
+btnReportQ.className='wide btn-map';
+btnReportQ.style.marginTop='8px';
+btnReportQ.textContent='\u{1F6A9} '+t('reportQuestionBtn');
+btnReportQ.onclick=function(){
+if(window.rpReportQuestion) window.rpReportQuestion(item,correct,btnReportQ);
+};
+panel.appendChild(btnReportQ);
 c.appendChild(panel);
 setTimeout(function(){ btn.focus(); panel.scrollIntoView({block:'nearest',behavior:'smooth'}); },50);
 }
@@ -2561,92 +2554,14 @@ function settings(){var s=A.settings;open(t('toolbarPrefs'),'<div class="v3-sett
 function adaptive(){var now=Date.now(),a=Q.map(function(i){var q=qstat(i.n),w=q.seen?1-acc(q)/100+.6*(q.nextDue<=now?1:.1)+.2*(q.mastered?0:1):1.6;return {i:i,w:w};}).sort(function(x,y){return y.w-x.w;});var pool=shuffle(a.slice(0,15).map(function(x){return x.i;}));curLevel=GENERAL_REVIEW_LEVEL;GENERAL_REVIEW_LEVEL.questions=pool;runMode='normal';sessionMode=FREE_MODE;deck=pool.slice();track('adaptive');beginSession('Repaso inteligente','Preguntas seleccionadas por tus errores y repasos pendientes');}
 function daily(){var d=today();if(A.dailyChallengeDate===d&&A.dailyChallengeDone){open('Reto diario','<div class="v3-row">Ya completaste el reto de hoy. Mejor puntuación: <strong>'+A.dailyChallengeBest+'/10</strong>.</div>');return;}var seed=0,i,p=Q.slice(),out=[];for(i=0;i<d.length;i++)seed=(seed*31+d.charCodeAt(i))>>>0;function r(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;}while(out.length<Math.min(10,p.length))out.push(p.splice(Math.floor(r()*p.length),1)[0]);A.dailyChallengeDate=d;A.dailyChallengeDone=false;save();curLevel=GENERAL_REVIEW_LEVEL;GENERAL_REVIEW_LEVEL.questions=out;runMode='normal';sessionMode=FREE_MODE;deck=out.slice();track('daily');beginSession('Reto diario','10 preguntas · desafío del día');}
 function toolbar(){var m=document.getElementById('map-view');if(!m||document.getElementById('v3-toolbar'))return;var b=document.createElement('div');b.id='v3-toolbar';b.className='v3-toolbar';var stateLabel=(typeof USER_PROFILE!=='undefined'&&USER_PROFILE.state&&STATE_DATA[USER_PROFILE.state])?'📍 '+STATE_DATA[USER_PROFILE.state].name:'📍 '+t('toolbarState');b.innerHTML='<button class="v3-tool primary" onclick="v3Dashboard()">📊 '+t('toolbarProgress')+'</button><button class="v3-tool" onclick="v3Profile()">'+(stateLabel||('📍 '+t('toolbarState')) )+'</button><button class="v3-tool" onclick="v3Adaptive()">🧠 '+t('toolbarReview')+'</button><button class="v3-tool" onclick="v3Daily()">📅 '+t('toolbarDaily')+'</button><button class="v3-tool" onclick="v3Settings()">⚙️ '+t('toolbarPrefs')+'</button><button class="v3-tool install-app" id="v3-install-btn" onclick="v3InstallApp()" hidden>📲 '+t('toolbarInstall')+'</button>';m.insertBefore(b,m.firstChild);}
-var REPORTS_KEY='uncle_sam_says_reports_v1';
-var reportDraftCategory='';
-var lastAnswerContext=null;
-var lastQuestionOptions=[];
-var shakeLast=0,shakeHits=0,shakeTimer=null,shakeReady=false;
-function loadReports(){try{var r=JSON.parse(localStorage.getItem(REPORTS_KEY)||'[]');return Array.isArray(r)?r:[];}catch(e){return [];}}
-function saveReports(r){try{localStorage.setItem(REPORTS_KEY,JSON.stringify(r));return true;}catch(e){return false;}}
-function reportModeName(){try{return sessionMode&&sessionMode.labelKey?t(sessionMode.labelKey):(runMode||'');}catch(e){return runMode||'';}}
-function rememberAnswerForReport(item,userAnswer,wasCorrect){
-  if(!item)return;
-  var answers=[];try{answers=acceptedAnswers(item)||[];}catch(e){answers=[];}
-  lastAnswerContext={questionNumber:item.n,questionEn:item.q||'',questionEs:item.es||'',userAnswer:String(userAnswer==null?'':userAnswer),possibleAnswers:(lastQuestionOptions&&lastQuestionOptions.length?lastQuestionOptions.slice():answers.slice()),correctAnswers:answers.slice(),wasCorrect:!!wasCorrect,language:uiLang,state:(typeof USER_PROFILE!=='undefined'?USER_PROFILE.state||'':''),mode:reportModeName(),time:new Date().toISOString()};
-}
-function addReport(category,details,ctx){
-  var reports=loadReports();var c=ctx||lastAnswerContext||{};
-  var r={id:'r_'+Date.now()+'_'+Math.random().toString(36).slice(2,8),date:new Date().toISOString(),category:category||'other',details:String(details||''),language:uiLang,questionNumber:c.questionNumber||'',questionEn:c.questionEn||'',questionEs:c.questionEs||'',userAnswer:c.userAnswer||'',possibleAnswers:(c.possibleAnswers||[]).join(' | '),correctAnswers:(c.correctAnswers||[]).join(' | '),wasCorrect:c.wasCorrect===true,mode:c.mode||reportModeName(),state:(typeof USER_PROFILE!=='undefined'?USER_PROFILE.state||c.state||'':c.state||'')};reports.push(r);if(reports.length>500)reports=reports.slice(-500);return saveReports(reports)?r:null;
-}
-function downloadBlob(name,text,type){try{var blob=new Blob([text],{type:type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);return true;}catch(e){return false;}}
-function csvCell(v){v=String(v==null?'':v);return '"'+v.replace(/"/g,'""')+'"';}
-function exportReportsCsv(){var reports=loadReports();if(!reports.length){toast(t('reportNoReports'));return;}var cols=['date','category','details','language','state','mode','questionNumber','questionEn','questionEs','userAnswer','possibleAnswers','correctAnswers','wasCorrect'];var csv='\ufeff'+cols.join(',')+'\n'+reports.map(function(r){return cols.map(function(k){return csvCell(r[k]);}).join(',');}).join('\n');downloadBlob('uncle-sam-says-reports-'+today()+'.csv',csv,'text/csv;charset=utf-8');toast(t('reportExported'));}
-function exportReportsJson(){var reports=loadReports();if(!reports.length){toast(t('reportNoReports'));return;}downloadBlob('uncle-sam-says-reports-'+today()+'.json',JSON.stringify(reports,null,2),'application/json;charset=utf-8');toast(t('reportExported'));}
-function reportQuestionButtonLabel(){return ({en:'⚠️ Report question',es:'⚠️ Reportar pregunta',zh:'⚠️ 报告此问题',tl:'⚠️ I-report ang tanong',vi:'⚠️ Báo cáo câu hỏi'})[uiLang]||'⚠️ Report question';}
-function reportQuestionNoteLabel(){return ({en:'Note (optional)',es:'Nota (opcional)',zh:'备注（可选）',tl:'Tala (opsyonal)',vi:'Ghi chú (tùy chọn)'})[uiLang]||'Note (optional)';}
-function reportCurrentQuestion(){
-  var ctx=lastAnswerContext;
-  if(!ctx){toast(t('reportNoAnswerContext'));return;}
-  var opts=(ctx.possibleAnswers||[]).map(function(x){return '<li>'+esc(x)+'</li>';}).join('');
-  var body='<div class=\"v3-report-current\"><p><strong>'+t('reportQuestion')+':</strong> #'+esc(ctx.questionNumber)+' · '+esc(ctx.questionEn)+'</p>'
-    +'<p><strong>'+t('reportYourAnswer')+':</strong> '+esc(ctx.userAnswer||'—')+'</p>'
-    +'<p><strong>'+t('reportCorrectAnswers')+':</strong> '+esc((ctx.correctAnswers||[]).join(' · ')||'—')+'</p>'
-    +'<p><strong>'+t('reportQuestion')+' — '+({en:'Possible answers',es:'Posibles respuestas',zh:'可能的答案',tl:'Mga posibleng sagot',vi:'Các câu trả lời có thể có'})[uiLang]+'</strong></p><ul class=\"v3-answer-list\">'+(opts||'<li>—</li>')+'</ul></div>'
-    +'<label class=\"v3-small\" style=\"display:block;margin-top:10px\">'+reportQuestionNoteLabel()+'<textarea id=\"v3-question-report-note\" class=\"answer-input\" rows=4 placeholder=\"'+t('reportDetailsPlaceholder')+'\" style=\"margin-top:6px;width:100%;box-sizing:border-box\"></textarea></label>'
-    +'<button class=\"wide btn-check\" id=\"v3-question-report-save\" style=\"margin-top:10px\">'+t('reportSave')+'</button>';
-  open(t('reportProblem'),body);
-  document.getElementById('v3-question-report-save').onclick=function(){var note=(document.getElementById('v3-question-report-note').value||'').trim();var r=addReport('question_report',note,ctx);if(r){toast(t('reportSaved'));close();}};
-}
-function commonReportOptions(){return [['freeze','🧊 '+t('reportAppFreezes')],['button','🔘 '+t('reportButtonNotWorking')],['translation','🌐 '+t('reportTranslation')],['question','❓ '+t('reportQuestionIncorrect')],['state','📍 '+t('reportStateInfo')],['display','🖥️ '+t('reportDisplay')],['progress','📈 '+t('reportProgress')],['install','📲 '+t('reportInstallUpdate')],['other','📝 '+t('reportOther')]];}
-function reportProblem(){
-  reportDraftCategory='';
-  var ctx=lastAnswerContext;
-  var current=ctx?'<div class="v3-report-current"><p><strong>'+t('reportQuestion')+':</strong> #'+esc(ctx.questionNumber)+' · '+esc(ctx.questionEn)+'</p><p><strong>'+t('reportYourAnswer')+':</strong> '+esc(ctx.userAnswer||'—')+'</p><p><strong>'+t('reportCorrectAnswers')+':</strong> '+esc((ctx.correctAnswers||[]).join(' · ')||'—')+'</p></div>':'';
-  var wrongBtn=ctx?'<button class="wide btn-danger" id="v3-report-wrong">⚠️ '+t('reportQuestionWrong')+'</button>':'<div class="v3-row v3-muted">'+t('reportNoAnswerContext')+'</div>';
-  var opts=commonReportOptions().map(function(x){return '<button type="button" class="v3-report-choice" data-report-cat="'+x[0]+'">'+x[1]+'</button>';}).join('');
-  var body='<div class="v3-small v3-muted">'+t('reportShakeHint')+'</div>'+current+'<div class="v3-section"><h3>'+t('commonProblems')+'</h3><div class="v3-grid v3-report-grid">'+opts+'</div></div><label class="v3-small">'+t('reportProblemType')+'<select id="v3-report-type" style="width:100%;margin-top:6px;padding:10px;border-radius:8px;background:var(--bg-panel-2);color:#fff;border:1px solid rgba(255,255,255,.2)"><option value="">'+t('reportSelectProblem')+'</option>'+commonReportOptions().map(function(x){return '<option value="'+x[0]+'">'+x[1].replace(/^\S+\s/,'')+'</option>';}).join('')+'</select></label><label class="v3-small" style="display:block;margin-top:10px">'+t('reportDetails')+'<textarea id="v3-report-details" class="answer-input" rows="4" placeholder="'+t('reportDetailsPlaceholder')+'" style="margin-top:6px;width:100%;box-sizing:border-box"></textarea></label><div class="v3-report-actions"><button class="wide btn-check" id="v3-report-save">'+t('reportSave')+'</button><button class="wide btn-map" id="v3-report-csv">'+t('reportExportCsv')+'</button></div><div class="v3-report-actions"><button class="wide btn-map" id="v3-report-json">'+t('reportExportJson')+'</button><button class="wide btn-map" id="v3-report-close">'+t('backToMapPlain')+'</button></div><div class="v3-small v3-muted" style="margin-top:10px">'+t('reportCount',{n:loadReports().length})+' · '+t('reportStoredLocally')+'</div>';
-  open(t('reportProblem'),body);
-  var sel=document.getElementById('v3-report-type');
-  Array.prototype.forEach.call(document.querySelectorAll('[data-report-cat]'),function(b){b.onclick=function(){reportDraftCategory=b.getAttribute('data-report-cat');sel.value=reportDraftCategory;Array.prototype.forEach.call(document.querySelectorAll('[data-report-cat]'),function(z){z.classList.remove('active');});b.classList.add('active');};});
-  if(ctx){var wb=document.getElementById('v3-report-wrong');wb.onclick=function(){var r=addReport('answer_wrong',t('reportQuestionWrong'),ctx);if(r){toast(t('reportSaved'));close();}};}
-  document.getElementById('v3-report-save').onclick=function(){var cat=sel.value||reportDraftCategory||'other';var details=(document.getElementById('v3-report-details').value||'').trim();var r=addReport(cat,details,null);if(r){toast(t('reportSaved'));close();}};
-  document.getElementById('v3-report-csv').onclick=exportReportsCsv;document.getElementById('v3-report-json').onclick=exportReportsJson;document.getElementById('v3-report-close').onclick=close;
-}
-function reportButton(){var m=document.getElementById('map-view');if(!m||m.style.display==='none'||document.getElementById('v3-report-bottom'))return;var b=document.createElement('button');b.id='v3-report-bottom';b.className='v3-report-bottom';b.type='button';b.textContent='⚠️ '+t('reportProblem');b.onclick=function(){requestShakePermission();reportProblem();};m.appendChild(b);}
-async function requestShakePermission(){try{if(typeof DeviceMotionEvent!=='undefined'&&typeof DeviceMotionEvent.requestPermission==='function'){var p=await DeviceMotionEvent.requestPermission();shakeReady=(p==='granted');if(shakeReady)window.addEventListener('devicemotion',onDeviceMotion,{passive:true});return;}shakeReady=true;startShakeListener();}catch(e){shakeReady=false;}}
-function startShakeListener(){if(!shakeReady)return;if(!window.__shakeListenerBound){window.addEventListener('devicemotion',onDeviceMotion,{passive:true});window.__shakeListenerBound=true;}}
-function onDeviceMotion(e){var a=e.accelerationIncludingGravity||e.acceleration;if(!a)return;var mag=Math.sqrt((a.x||0)*(a.x||0)+(a.y||0)*(a.y||0)+(a.z||0)*(a.z||0));var now=Date.now();if(mag>22){if(now-shakeLast>180){shakeHits++;shakeLast=now;}clearTimeout(shakeTimer);shakeTimer=setTimeout(function(){shakeHits=0;},700);if(shakeHits>=3&&now-(window.__lastReportOpen||0)>1800){shakeHits=0;window.__lastReportOpen=now;reportProblem();}}}
-function initShake(){try{if(typeof DeviceMotionEvent==='undefined')return;if(typeof DeviceMotionEvent.requestPermission!=='function'){shakeReady=true;startShakeListener();}}catch(e){}}
 function decorate(r){var e=document.getElementById('end-screen');if(!e||document.getElementById('v3-end'))return;var b=document.createElement('div');b.id='v3-end';b.className='v3-exam-breakdown';var cat=Object.keys(r.categories||{}).map(function(k){var z=r.categories[k],a=z.n?Math.round(z.c/z.n*100):0;return '<div class="v3-cat-chip"><span>'+esc(catNameV(k))+'</span><strong>'+a+'%</strong></div>';}).join('');b.innerHTML='<div class="v3-row"><strong>Resumen:</strong> '+esc(r.kind)+' · '+r.correct+'/'+r.total+' · '+r.accuracy+'%'+(r.avgMs?' · '+(r.avgMs/1000).toFixed(1)+'s/pregunta':'')+'</div>'+(cat?'<div class="v3-row"><strong>Por categoría</strong>'+cat+'</div>':'');e.appendChild(b);}
 window.v3Dashboard=dashboard;window.v3Adaptive=adaptive;window.v3Daily=daily;window.v3Settings=settings;
 var om=window.mark,ota=window.markTimeAttack;
 function startTrack(kind){if(!active)track(kind);}
 var wrapNames=[['startExam','exam'],['startLevel','level'],['startLevelTier','level'],['startLevelStreak','streak-mix'],['startLevelTimeAttack','time-attack'],['startLevelExpert','expert'],['startGeneralReviewTier','level'],['startGeneralReviewStreak','streak-mix'],['startGeneralReviewTimeAttack','time-attack']];
 wrapNames.forEach(function(pair){var fn=window[pair[0]];if(typeof fn==='function'){window[pair[0]]=function(){startTrack(pair[1]);return fn.apply(this,arguments);};}});
-var ob=window.beginSession;window.mark=function(ok,extra){
-  var item=deck&&deck[idx],ms=lastAnswerAt?Date.now()-lastAnswerAt:0;
-  try{ record(item,!!ok,ms,curLevel===null?'exam':'level'); }catch(e){ console.error('Report/analytics record error:',e); }
-  try{ if(active){active.total++;if(ok)active.correct++;active.answers.push({ms:ms,cat:item&&item.cat,ok:!!ok});} }catch(e){ console.error('Session tracking error:',e); }
-  try{ fx(!!ok); }catch(e){}
-  var r;
-  try{ r=om.apply(this,arguments); }catch(e){
-    console.error('Answer result error:',e);
-    try{ setTimeout(function(){ if(!document.querySelector('#controls .result-panel')){ try{ showResultPanel(!!ok); }catch(_e){ console.error('Forced result panel error:',_e); } } },0); }catch(_e){}
-  }
-  try{ if(active&&idx>=deck.length-1)setTimeout(finish,900); }catch(e){}
-  return r;
-};
-window.markTimeAttack=function(ok){
-  var item=deck&&deck[idx],ms=lastAnswerAt?Date.now()-lastAnswerAt:0;
-  try{ record(item,!!ok,ms,'time-attack'); }catch(e){ console.error('Report/analytics record error:',e); }
-  try{ if(active){active.total++;if(ok)active.correct++;active.answers.push({ms:ms,cat:item&&item.cat,ok:!!ok});} }catch(e){}
-  try{ fx(!!ok); }catch(e){}
-  try{ return ota.apply(this,arguments); }catch(e){
-    console.error('Time-attack result error:',e);
-    try{ setTimeout(function(){ if(!document.querySelector('#controls .result-panel')){ try{ showResultPanel(!!ok); }catch(_e){} } },0); }catch(_e){}
-  }
-};
-var mo=new MutationObserver(function(){var end=document.getElementById('end-screen');if(active&&end&&end.style.display==='block')setTimeout(finish,80);toolbar();reportButton();lastAnswerAt=Date.now();});mo.observe(document.body,{subtree:true,childList:true});
+var ob=window.beginSession;window.mark=function(ok,extra){var item=deck&&deck[idx],ms=lastAnswerAt?Date.now()-lastAnswerAt:0;record(item,!!ok,ms,curLevel===null?'exam':'level');if(active){active.total++;if(ok)active.correct++;active.answers.push({ms:ms,cat:item&&item.cat,ok:!!ok});}fx(!!ok);var r=om.apply(this,arguments);if(active&&idx>=deck.length-1)setTimeout(finish,900);return r;};window.markTimeAttack=function(ok){var item=deck&&deck[idx],ms=lastAnswerAt?Date.now()-lastAnswerAt:0;record(item,!!ok,ms,'time-attack');if(active){active.total++;if(ok)active.correct++;active.answers.push({ms:ms,cat:item&&item.cat,ok:!!ok});}fx(!!ok);var r=ota.apply(this,arguments);if(active&&!ok)setTimeout(finish,900);return r;};
+var mo=new MutationObserver(function(){var end=document.getElementById('end-screen');if(active&&end&&end.style.display==='block')setTimeout(finish,80);toolbar();lastAnswerAt=Date.now();});mo.observe(document.body,{subtree:true,childList:true});
 document.addEventListener('keydown',function(e){if(/INPUT|TEXTAREA|SELECT/.test((e.target||{}).tagName||''))return;if(document.getElementById('v3-modal')){if(e.key==='Escape')close();return;}if(document.getElementById('play-view')?.style.display==='none')return;var n=parseInt(e.key,10),bs=document.querySelectorAll('.choice-btn');if(n>=1&&n<=4&&bs[n-1])bs[n-1].click();else if(e.key==='Enter'){var b=document.querySelector('#controls button:not([disabled])');if(b)b.click();}});
 function isStandalone(){return window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;}
 function updateInstallButton(){var b=document.getElementById('v3-install-btn');if(!b)return;if(isStandalone()){b.hidden=true;return;}b.hidden=!installEvent;}
@@ -2655,7 +2570,189 @@ window.v3InstallApp=installApp;
 window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();installEvent=e;updateInstallButton();});
 window.addEventListener('appinstalled',function(){installEvent=null;updateInstallButton();});
 if('serviceWorker' in navigator)window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){});});
-setTimeout(function(){toolbar();reportButton();updateInstallButton();initShake();},300);
+setTimeout(function(){toolbar();updateInstallButton();},300);
+})();
+
+/* ===== Reportes: problema general + reportar pregunta + exportar CSV ===== */
+(function(){'use strict';
+var REPORTS_KEY='rumbo_ciudadania_reports_v1';
+var MAX_REPORTS=500;
+var REPORT_ISSUE_KEYS=['issueNotLoading','issueProgressLost','issueWrongAnswer','issueTranslation','issueVisual','issueCrash','issueInstall','issueOther'];
+var SHAKE_THRESHOLD=16;
+var SHAKE_COOLDOWN=1500;
+var motionListenerAdded=false;
+var lastAccel=null;
+var lastShakeAt=0;
+
+function rEsc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+
+function loadReports(){
+try{ return JSON.parse(localStorage.getItem(REPORTS_KEY)||'[]')||[]; }catch(e){ return []; }
+}
+function saveReports(list){
+try{ localStorage.setItem(REPORTS_KEY,JSON.stringify(list.slice(-MAX_REPORTS))); }catch(e){}
+}
+function addReport(rec){
+var list=loadReports();
+rec.id=Date.now()+'-'+Math.random().toString(36).slice(2,8);
+rec.timestamp=new Date().toISOString();
+rec.lang=uiLang;
+list.push(rec);
+saveReports(list);
+return rec;
+}
+
+/* --- Reportar problema general (botón flotante / agitar) --- */
+function renderReportFab(){
+if(document.getElementById('report-fab')){ updateReportFabText(); return; }
+var b=document.createElement('button');
+b.id='report-fab';
+b.className='report-fab';
+b.type='button';
+b.onclick=function(){ maybeRequestMotionPermission(); openReportMenu('button'); };
+document.body.appendChild(b);
+updateReportFabText();
+}
+function updateReportFabText(){
+var b=document.getElementById('report-fab');
+if(b) b.textContent='\u26A0\uFE0F '+t('reportProblemBtn');
+}
+
+function openReportMenu(source){
+var listHtml=REPORT_ISSUE_KEYS.map(function(k){
+return '<button type="button" class="wide btn-map report-issue-btn" data-key="'+k+'">'+rEsc(t(k))+'</button>';
+}).join('');
+window.v3OpenModal(t('reportProblemTitle'),'<div class="report-issue-list">'+listHtml+'</div>');
+Array.prototype.forEach.call(document.querySelectorAll('.report-issue-btn'),function(btn){
+btn.onclick=function(){ openReportDetail(btn.getAttribute('data-key'),source); };
+});
+}
+function openReportDetail(issueKey,source){
+var body='<p class="panel-answer-label">'+rEsc(t(issueKey))+'</p>'+
+'<textarea id="rp-detail" class="answer-input expert-textarea rp-detail-textarea" rows="3" placeholder="'+rEsc(t('reportDetailsPlaceholder'))+'"></textarea>'+
+'<button type="button" class="wide btn-reveal" id="rp-send" style="margin-top:10px;">'+rEsc(t('reportSendBtn'))+'</button>'+
+'<button type="button" class="wide btn-map" id="rp-back" style="margin-top:8px;">'+rEsc(t('reportBackBtn'))+'</button>';
+window.v3OpenModal(t('reportProblemTitle'),body);
+document.getElementById('rp-send').onclick=function(){
+var detail=document.getElementById('rp-detail').value.trim();
+addReport({type:'problem',category:issueKey,detail:detail,source:source||''});
+window.v3CloseModal();
+toast(t('reportSentToast'));
+};
+document.getElementById('rp-back').onclick=function(){ openReportMenu(source); };
+}
+
+/* --- Reportar pregunta (desde el panel de resultado) --- */
+window.rpReportQuestion=function(item,wasCorrect,btnEl){
+if(!item) return;
+if(btnEl && btnEl.disabled) return;
+var mode='';
+try{ mode=activeMode().kind; }catch(e){}
+var accepted='';
+try{ accepted=acceptedAnswers(item).join(' | '); }catch(e){ accepted=item.a||''; }
+addReport({
+type:'question',
+category:'question_report',
+detail:'',
+questionNumber:item.n,
+questionEn:item.q,
+questionEs:item.qs,
+userAnswer:lastUserAnswerText,
+correctAnswers:accepted,
+wasCorrect:wasCorrect?1:0,
+mode:mode
+});
+if(btnEl){ btnEl.disabled=true; btnEl.textContent='\u2705 '+t('reportQuestionBtn'); }
+toast(t('reportQuestionSentToast'));
+};
+
+/* --- Agitar el celular para reportar --- */
+function handleDeviceMotion(e){
+var acc=e.accelerationIncludingGravity||e.acceleration;
+if(!acc||acc.x===null||acc.x===undefined) return;
+var now=Date.now();
+if(lastAccel){
+var dx=Math.abs(acc.x-lastAccel.x),dy=Math.abs(acc.y-lastAccel.y),dz=Math.abs(acc.z-lastAccel.z);
+if((dx+dy+dz)>SHAKE_THRESHOLD && (now-lastShakeAt)>SHAKE_COOLDOWN){
+lastShakeAt=now;
+if(!document.getElementById('v3-modal')){ openReportMenu('shake'); }
+}
+}
+lastAccel={x:acc.x,y:acc.y,z:acc.z};
+}
+function addShakeListener(){
+if(motionListenerAdded) return;
+motionListenerAdded=true;
+window.addEventListener('devicemotion',handleDeviceMotion,false);
+}
+function maybeRequestMotionPermission(){
+try{
+if(typeof DeviceMotionEvent!=='undefined' && typeof DeviceMotionEvent.requestPermission==='function'){
+DeviceMotionEvent.requestPermission().then(function(state){
+if(state==='granted') addShakeListener();
+}).catch(function(){});
+}else if(typeof window.DeviceMotionEvent!=='undefined'){
+addShakeListener();
+}
+}catch(e){}
+}
+
+/* --- Exportar reportes a CSV (Excel / Google Sheets) --- */
+function reportsToCSV(list){
+var headers=['timestamp','lang','type','category','detail','questionNumber','questionEn','questionEs','userAnswer','correctAnswers','wasCorrect','mode','source'];
+var rows=[headers.join(',')];
+list.forEach(function(r){
+var row=headers.map(function(h){
+var v=r[h];
+if(v===undefined||v===null) v='';
+v=String(v).replace(/"/g,'""');
+return '"'+v+'"';
+});
+rows.push(row.join(','));
+});
+return rows.join('\r\n');
+}
+function exportReportsCSV(){
+var list=loadReports();
+if(!list.length){ toast(t('exportReportsEmpty')); return; }
+var csv=reportsToCSV(list);
+var blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});
+var url=URL.createObjectURL(blob);
+var a=document.createElement('a');
+a.href=url;
+a.download='uncle_sam_says_reportes_'+(new Date().toISOString().slice(0,10))+'.csv';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+setTimeout(function(){ URL.revokeObjectURL(url); },1000);
+toast(t('exportReportsDoneToast'));
+}
+window.rsExportReportsCSV=exportReportsCSV;
+
+/* --- Sección de exportar dentro de Preferencias --- */
+function injectReportsExportSection(){
+var modal=document.querySelector('#v3-modal .v3-modal');
+if(!modal || document.getElementById('rp-export-section')) return;
+var list=loadReports();
+var section=document.createElement('div');
+section.id='rp-export-section';
+section.className='v3-section';
+section.innerHTML='<h3>'+rEsc(t('reportsSectionTitle'))+'</h3><div class="v3-row v3-muted">'+rEsc(t('reportsCountLabel',{n:list.length}))+'</div><button type="button" class="wide btn-map" id="rp-export-btn" style="margin-top:8px;">\uD83D\uDCE4 '+rEsc(t('exportReportsBtn'))+'</button>';
+modal.appendChild(section);
+document.getElementById('rp-export-btn').onclick=exportReportsCSV;
+}
+var _origV3Settings=window.v3Settings;
+if(typeof _origV3Settings==='function'){
+window.v3Settings=function(){ _origV3Settings(); injectReportsExportSection(); };
+}
+
+/* --- Hooks de idioma e inicialización --- */
+var _origRefreshUIText=window.refreshUIText||refreshUIText;
+window.refreshUIText=function(){
+_origRefreshUIText();
+updateReportFabText();
+};
+setTimeout(function(){ renderReportFab(); maybeRequestMotionPermission(); },350);
 })();
 
 </script>
