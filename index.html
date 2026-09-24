@@ -2119,7 +2119,10 @@ try{ rememberAnswerForReport(item,val,correct); }catch(e){ console.warn('Report 
 input.disabled=true;
 btn.disabled=true;
 try{ mark(correct); }
-catch(e){ console.error('Result handler error:',e); answered=false; input.disabled=false; btn.disabled=false; try{ toast(t('answerCheckError')); }catch(_e){} }
+catch(e){
+    console.error('Result handler error:',e);
+    try{ setTimeout(function(){ if(!document.querySelector('#controls .result-panel')){ try{ showResultPanel(correct); }catch(_e){ console.error('Fallback result panel error:',_e); } } },0); }catch(_e){}
+  }
 }
 
 function renderExpertStep1(item,c){
@@ -2154,7 +2157,10 @@ input.disabled=true;
 btn.disabled=true;
 if(!correct){
 answered=true;
-try{ mark(false); }catch(e){ console.error('Result handler error:',e); answered=false; input.disabled=false; btn.disabled=false; try{ toast(t('answerCheckError')); }catch(_e){} }
+try{ mark(false); }catch(e){
+    console.error('Expert result handler error:',e);
+    try{ setTimeout(function(){ if(!document.querySelector('#controls .result-panel')){ try{ showResultPanel(false); }catch(_e){ console.error('Fallback expert result panel error:',_e); } } },0); }catch(_e){}
+  }
 return;
 }
 renderExpertStep2(item,c);
@@ -2617,7 +2623,29 @@ var om=window.mark,ota=window.markTimeAttack;
 function startTrack(kind){if(!active)track(kind);}
 var wrapNames=[['startExam','exam'],['startLevel','level'],['startLevelTier','level'],['startLevelStreak','streak-mix'],['startLevelTimeAttack','time-attack'],['startLevelExpert','expert'],['startGeneralReviewTier','level'],['startGeneralReviewStreak','streak-mix'],['startGeneralReviewTimeAttack','time-attack']];
 wrapNames.forEach(function(pair){var fn=window[pair[0]];if(typeof fn==='function'){window[pair[0]]=function(){startTrack(pair[1]);return fn.apply(this,arguments);};}});
-var ob=window.beginSession;window.mark=function(ok,extra){var item=deck&&deck[idx],ms=lastAnswerAt?Date.now()-lastAnswerAt:0;record(item,!!ok,ms,curLevel===null?'exam':'level');if(active){active.total++;if(ok)active.correct++;active.answers.push({ms:ms,cat:item&&item.cat,ok:!!ok});}fx(!!ok);var r=om.apply(this,arguments);if(active&&idx>=deck.length-1)setTimeout(finish,900);return r;};window.markTimeAttack=function(ok){var item=deck&&deck[idx],ms=lastAnswerAt?Date.now()-lastAnswerAt:0;record(item,!!ok,ms,'time-attack');if(active){active.total++;if(ok)active.correct++;active.answers.push({ms:ms,cat:item&&item.cat,ok:!!ok});}fx(!!ok);var r=ota.apply(this,arguments);if(active&&!ok)setTimeout(finish,900);return r;};
+var ob=window.beginSession;window.mark=function(ok,extra){
+  var item=deck&&deck[idx],ms=lastAnswerAt?Date.now()-lastAnswerAt:0;
+  try{ record(item,!!ok,ms,curLevel===null?'exam':'level'); }catch(e){ console.error('Report/analytics record error:',e); }
+  try{ if(active){active.total++;if(ok)active.correct++;active.answers.push({ms:ms,cat:item&&item.cat,ok:!!ok});} }catch(e){ console.error('Session tracking error:',e); }
+  try{ fx(!!ok); }catch(e){}
+  var r;
+  try{ r=om.apply(this,arguments); }catch(e){
+    console.error('Answer result error:',e);
+    try{ setTimeout(function(){ if(!document.querySelector('#controls .result-panel')){ try{ showResultPanel(!!ok); }catch(_e){ console.error('Forced result panel error:',_e); } } },0); }catch(_e){}
+  }
+  try{ if(active&&idx>=deck.length-1)setTimeout(finish,900); }catch(e){}
+  return r;
+};
+window.markTimeAttack=function(ok){
+  var item=deck&&deck[idx],ms=lastAnswerAt?Date.now()-lastAnswerAt:0;
+  try{ record(item,!!ok,ms,'time-attack'); }catch(e){ console.error('Report/analytics record error:',e); }
+  try{ if(active){active.total++;if(ok)active.correct++;active.answers.push({ms:ms,cat:item&&item.cat,ok:!!ok});} }catch(e){}
+  try{ fx(!!ok); }catch(e){}
+  try{ return ota.apply(this,arguments); }catch(e){
+    console.error('Time-attack result error:',e);
+    try{ setTimeout(function(){ if(!document.querySelector('#controls .result-panel')){ try{ showResultPanel(!!ok); }catch(_e){} } },0); }catch(_e){}
+  }
+};
 var mo=new MutationObserver(function(){var end=document.getElementById('end-screen');if(active&&end&&end.style.display==='block')setTimeout(finish,80);toolbar();reportButton();lastAnswerAt=Date.now();});mo.observe(document.body,{subtree:true,childList:true});
 document.addEventListener('keydown',function(e){if(/INPUT|TEXTAREA|SELECT/.test((e.target||{}).tagName||''))return;if(document.getElementById('v3-modal')){if(e.key==='Escape')close();return;}if(document.getElementById('play-view')?.style.display==='none')return;var n=parseInt(e.key,10),bs=document.querySelectorAll('.choice-btn');if(n>=1&&n<=4&&bs[n-1])bs[n-1].click();else if(e.key==='Enter'){var b=document.querySelector('#controls button:not([disabled])');if(b)b.click();}});
 function isStandalone(){return window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;}
