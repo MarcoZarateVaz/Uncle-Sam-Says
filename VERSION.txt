@@ -1,0 +1,2 @@
+Uncle Sam Says PWA v14
+Added multilingual problem reporting, shake-to-report, incorrect-answer reports, local report storage, and CSV/JSON export.

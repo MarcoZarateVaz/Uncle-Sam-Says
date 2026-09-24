@@ -1,4 +1,4 @@
-# Rumbo a la ciudadanía — PWA
+# Uncle Sam Says — PWA
 
 Versión preparada para publicar en GitHub Pages e instalarse como aplicación desde un navegador compatible.
 
@@ -26,3 +26,25 @@ Versión preparada para publicar en GitHub Pages e instalarse como aplicación d
 ## Nota
 
 Esta versión conserva la aplicación sin las funciones de micrófono/reconocimiento de voz y utiliza la versión corregida de la interfaz de **Mi estado**.
+
+## Botón "Instalar app"
+
+La aplicación incluye un botón **📲 Instalar app**. En navegadores compatibles (por ejemplo Chrome en Android, usando HTTPS) abre directamente el diálogo nativo de instalación mediante `beforeinstallprompt`, sin que el usuario tenga que buscar la opción en el menú del navegador.
+
+En iPhone/iPad, iOS no permite que una página web invoque programáticamente el instalador; en ese caso el botón informa al usuario de la limitación y se debe usar la opción de instalación del navegador.
+
+
+### 🦅 Animación del águila
+La aplicación incluye una animación de vuelo de 12 fotogramas en `assets/animations/`. El Service Worker precarga los fotogramas para que el águila también funcione cuando la PWA está sin conexión. Si el movimiento está reducido en el dispositivo (`prefers-reduced-motion`), la animación se desactiva respetuosamente.
+
+## Cambios recientes
+- El idioma de la interfaz se detecta automáticamente desde el idioma preferido del dispositivo en el primer inicio; una selección manual se conserva en el navegador.
+- En preguntas de opción múltiple, cuando una pregunta tiene varias respuestas aceptadas, se selecciona aleatoriamente una de ellas como la única respuesta correcta mostrada.
+
+
+## v14 reportes
+- Botón inferior “Reportar un problema” traducido según el idioma de la app.
+- Agitar el teléfono abre el menú de reportes cuando el dispositivo permite detectar movimiento.
+- Incluye problemas comunes y un reporte especial para respuestas marcadas como equivocadas.
+- Los reportes guardan pregunta, respuesta del usuario y respuestas correctas cuando aplica.
+- Los reportes se guardan localmente y se pueden exportar a CSV o JSON.
