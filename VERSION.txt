@@ -1,2 +1,2 @@
-Uncle Sam Says PWA v15
-Improved answer checking reliability, safer report hooks, explicit button behavior, and cache refresh.
+Uncle Sam Says PWA v16
+Added Report question button on Approved/Review result screens, captures possible answers and user answer, and lets the user add a note for later review.

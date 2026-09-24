@@ -42,7 +42,7 @@ La aplicación incluye una animación de vuelo de 12 fotogramas en `assets/anima
 - En preguntas de opción múltiple, cuando una pregunta tiene varias respuestas aceptadas, se selecciona aleatoriamente una de ellas como la única respuesta correcta mostrada.
 
 
-## v15 reportes
+## v16 reportes
 - Botón inferior “Reportar un problema” traducido según el idioma de la app.
 - Agitar el teléfono abre el menú de reportes cuando el dispositivo permite detectar movimiento.
 - Incluye problemas comunes y un reporte especial para respuestas marcadas como equivocadas.

@@ -2051,6 +2051,7 @@ if(m.kind==='mc'){
 var correctText=randomAcceptedAnswer(item);
 var wrongPool=pickDistractors(item,m.options-1);
 var opts=shuffle([correctText].concat(wrongPool));
+lastQuestionOptions=opts.slice();
 opts.forEach(function(optText){
 var b=document.createElement('button');
 b.className='option-btn';
@@ -2059,6 +2060,7 @@ b.onclick=function(){ selectOption(item,optText,b,c); };
 c.appendChild(b);
 });
 }else if(m.kind==='expert'){
+lastQuestionOptions=acceptedAnswers(item).slice();
 renderExpertStep1(item,c);
 }else{
 var row=document.createElement('div');
@@ -2068,6 +2070,7 @@ input.type='text';
 input.className='answer-input';
 input.placeholder=t('answerPlaceholder');
 input.autocomplete='off';
+lastQuestionOptions=acceptedAnswers(item).slice();
 var btn=document.createElement('button');
 btn.className='btn-check';
 btn.type='button';
@@ -2345,6 +2348,13 @@ var whyBox=document.createElement('div');
 whyBox.style.marginTop='10px';
 whyBox.innerHTML='<p class="panel-answer-label">'+t('whyLabel')+'</p><p class="panel-answer-value" style="font-size:14px;font-weight:400;">'+whyText(item)+'</p>';
 panel.appendChild(whyBox);
+var reportBtn=document.createElement('button');
+reportBtn.className='wide btn-map';
+reportBtn.type='button';
+reportBtn.style.marginTop='10px';
+reportBtn.textContent=reportQuestionButtonLabel();
+reportBtn.onclick=function(){reportCurrentQuestion();};
+panel.appendChild(reportBtn);
 var livesWrap=document.createElement('div');
 livesWrap.className='result-lives';
 var livesLabel=document.createElement('p');
@@ -2548,6 +2558,7 @@ function toolbar(){var m=document.getElementById('map-view');if(!m||document.get
 var REPORTS_KEY='uncle_sam_says_reports_v1';
 var reportDraftCategory='';
 var lastAnswerContext=null;
+var lastQuestionOptions=[];
 var shakeLast=0,shakeHits=0,shakeTimer=null,shakeReady=false;
 function loadReports(){try{var r=JSON.parse(localStorage.getItem(REPORTS_KEY)||'[]');return Array.isArray(r)?r:[];}catch(e){return [];}}
 function saveReports(r){try{localStorage.setItem(REPORTS_KEY,JSON.stringify(r));return true;}catch(e){return false;}}
@@ -2555,16 +2566,31 @@ function reportModeName(){try{return sessionMode&&sessionMode.labelKey?t(session
 function rememberAnswerForReport(item,userAnswer,wasCorrect){
   if(!item)return;
   var answers=[];try{answers=acceptedAnswers(item)||[];}catch(e){answers=[];}
-  lastAnswerContext={questionNumber:item.n,questionEn:item.q||'',questionEs:item.es||'',userAnswer:String(userAnswer==null?'':userAnswer),correctAnswers:answers.slice(),wasCorrect:!!wasCorrect,language:uiLang,state:(typeof USER_PROFILE!=='undefined'?USER_PROFILE.state||'':''),mode:reportModeName(),time:new Date().toISOString()};
+  lastAnswerContext={questionNumber:item.n,questionEn:item.q||'',questionEs:item.es||'',userAnswer:String(userAnswer==null?'':userAnswer),possibleAnswers:(lastQuestionOptions&&lastQuestionOptions.length?lastQuestionOptions.slice():answers.slice()),correctAnswers:answers.slice(),wasCorrect:!!wasCorrect,language:uiLang,state:(typeof USER_PROFILE!=='undefined'?USER_PROFILE.state||'':''),mode:reportModeName(),time:new Date().toISOString()};
 }
 function addReport(category,details,ctx){
   var reports=loadReports();var c=ctx||lastAnswerContext||{};
-  var r={id:'r_'+Date.now()+'_'+Math.random().toString(36).slice(2,8),date:new Date().toISOString(),category:category||'other',details:String(details||''),language:uiLang,questionNumber:c.questionNumber||'',questionEn:c.questionEn||'',questionEs:c.questionEs||'',userAnswer:c.userAnswer||'',correctAnswers:(c.correctAnswers||[]).join(' | '),wasCorrect:c.wasCorrect===true,mode:c.mode||reportModeName(),state:(typeof USER_PROFILE!=='undefined'?USER_PROFILE.state||c.state||'':c.state||'')};reports.push(r);if(reports.length>500)reports=reports.slice(-500);return saveReports(reports)?r:null;
+  var r={id:'r_'+Date.now()+'_'+Math.random().toString(36).slice(2,8),date:new Date().toISOString(),category:category||'other',details:String(details||''),language:uiLang,questionNumber:c.questionNumber||'',questionEn:c.questionEn||'',questionEs:c.questionEs||'',userAnswer:c.userAnswer||'',possibleAnswers:(c.possibleAnswers||[]).join(' | '),correctAnswers:(c.correctAnswers||[]).join(' | '),wasCorrect:c.wasCorrect===true,mode:c.mode||reportModeName(),state:(typeof USER_PROFILE!=='undefined'?USER_PROFILE.state||c.state||'':c.state||'')};reports.push(r);if(reports.length>500)reports=reports.slice(-500);return saveReports(reports)?r:null;
 }
 function downloadBlob(name,text,type){try{var blob=new Blob([text],{type:type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);return true;}catch(e){return false;}}
 function csvCell(v){v=String(v==null?'':v);return '"'+v.replace(/"/g,'""')+'"';}
-function exportReportsCsv(){var reports=loadReports();if(!reports.length){toast(t('reportNoReports'));return;}var cols=['date','category','details','language','state','mode','questionNumber','questionEn','questionEs','userAnswer','correctAnswers','wasCorrect'];var csv='\ufeff'+cols.join(',')+'\n'+reports.map(function(r){return cols.map(function(k){return csvCell(r[k]);}).join(',');}).join('\n');downloadBlob('uncle-sam-says-reports-'+today()+'.csv',csv,'text/csv;charset=utf-8');toast(t('reportExported'));}
+function exportReportsCsv(){var reports=loadReports();if(!reports.length){toast(t('reportNoReports'));return;}var cols=['date','category','details','language','state','mode','questionNumber','questionEn','questionEs','userAnswer','possibleAnswers','correctAnswers','wasCorrect'];var csv='\ufeff'+cols.join(',')+'\n'+reports.map(function(r){return cols.map(function(k){return csvCell(r[k]);}).join(',');}).join('\n');downloadBlob('uncle-sam-says-reports-'+today()+'.csv',csv,'text/csv;charset=utf-8');toast(t('reportExported'));}
 function exportReportsJson(){var reports=loadReports();if(!reports.length){toast(t('reportNoReports'));return;}downloadBlob('uncle-sam-says-reports-'+today()+'.json',JSON.stringify(reports,null,2),'application/json;charset=utf-8');toast(t('reportExported'));}
+function reportQuestionButtonLabel(){return ({en:'⚠️ Report question',es:'⚠️ Reportar pregunta',zh:'⚠️ 报告此问题',tl:'⚠️ I-report ang tanong',vi:'⚠️ Báo cáo câu hỏi'})[uiLang]||'⚠️ Report question';}
+function reportQuestionNoteLabel(){return ({en:'Note (optional)',es:'Nota (opcional)',zh:'备注（可选）',tl:'Tala (opsyonal)',vi:'Ghi chú (tùy chọn)'})[uiLang]||'Note (optional)';}
+function reportCurrentQuestion(){
+  var ctx=lastAnswerContext;
+  if(!ctx){toast(t('reportNoAnswerContext'));return;}
+  var opts=(ctx.possibleAnswers||[]).map(function(x){return '<li>'+esc(x)+'</li>';}).join('');
+  var body='<div class=\"v3-report-current\"><p><strong>'+t('reportQuestion')+':</strong> #'+esc(ctx.questionNumber)+' · '+esc(ctx.questionEn)+'</p>'
+    +'<p><strong>'+t('reportYourAnswer')+':</strong> '+esc(ctx.userAnswer||'—')+'</p>'
+    +'<p><strong>'+t('reportCorrectAnswers')+':</strong> '+esc((ctx.correctAnswers||[]).join(' · ')||'—')+'</p>'
+    +'<p><strong>'+t('reportQuestion')+' — '+({en:'Possible answers',es:'Posibles respuestas',zh:'可能的答案',tl:'Mga posibleng sagot',vi:'Các câu trả lời có thể có'})[uiLang]+'</strong></p><ul class=\"v3-answer-list\">'+(opts||'<li>—</li>')+'</ul></div>'
+    +'<label class=\"v3-small\" style=\"display:block;margin-top:10px\">'+reportQuestionNoteLabel()+'<textarea id=\"v3-question-report-note\" class=\"answer-input\" rows=4 placeholder=\"'+t('reportDetailsPlaceholder')+'\" style=\"margin-top:6px;width:100%;box-sizing:border-box\"></textarea></label>'
+    +'<button class=\"wide btn-check\" id=\"v3-question-report-save\" style=\"margin-top:10px\">'+t('reportSave')+'</button>';
+  open(t('reportProblem'),body);
+  document.getElementById('v3-question-report-save').onclick=function(){var note=(document.getElementById('v3-question-report-note').value||'').trim();var r=addReport('question_report',note,ctx);if(r){toast(t('reportSaved'));close();}};
+}
 function commonReportOptions(){return [['freeze','🧊 '+t('reportAppFreezes')],['button','🔘 '+t('reportButtonNotWorking')],['translation','🌐 '+t('reportTranslation')],['question','❓ '+t('reportQuestionIncorrect')],['state','📍 '+t('reportStateInfo')],['display','🖥️ '+t('reportDisplay')],['progress','📈 '+t('reportProgress')],['install','📲 '+t('reportInstallUpdate')],['other','📝 '+t('reportOther')]];}
 function reportProblem(){
   reportDraftCategory='';
