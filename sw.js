@@ -1,4 +1,4 @@
-const CACHE="uncle-sam-says-v14";
+const CACHE="uncle-sam-says-v15";
 const ASSETS=[
   "./",
   "./index.html",

@@ -154,7 +154,7 @@ animation:stampIn .4s cubic-bezier(0.34,1.56,0.64,1);
 .answer-input{flex:1;min-width:0;padding:11px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.07);color:#fff;font-size:14px;font-family:inherit;}
 .answer-input::placeholder{color:rgba(255,255,255,0.42);}
 .expert-textarea{width:100%;resize:vertical;margin-bottom:8px;display:block;}
-.btn-check{background:var(--gold);border:1px solid var(--gold);color:#241C10;border-radius:8px;padding:11px 16px;font-weight:500;font-size:14px;font-family:inherit;cursor:pointer;}
+.btn-check{touch-action:manipulation;-webkit-tap-highlight-color:transparent;background:var(--gold);border:1px solid var(--gold);color:#241C10;border-radius:8px;padding:11px 16px;font-weight:500;font-size:14px;font-family:inherit;cursor:pointer;}
 .choice-row{display:flex;gap:8px;margin-top:4px;}
 .choice-btn{flex:1;padding:11px 10px;border-radius:8px;font-size:13px;font-family:inherit;cursor:pointer;}
 button.wide{
@@ -1190,7 +1190,7 @@ statIntentos:"Lives", statPuntos:"Total points", statRacha:"Current streak", sta
 toastMilestone:"New best streak: {n}", toastRegen:"Streak of {n}: you get a life back",
 qMeta:"USCIS #{official} \u00b7 {cat} \u00b7 {i}/{n}", hintPrefix:"Hint: {mask}",
 stampApprove:"Correct", stampRetry:"Review this",
-answerPlaceholder:"Type your answer in English", comprobar:"Check",
+answerPlaceholder:"Type your answer in English", comprobar:"Check",answerCheckError:"The answer could not be checked. Please try again.",
 resultCorrect:"You got it", resultWrong:"Time to review this one",
 acceptedAnswer:"Accepted answer", livesRemaining:"Lives left", continueBtn:"Continue",
 expertPrompt:"Good. Now explain in your own words why this is the correct answer:",
@@ -1249,7 +1249,7 @@ statIntentos:"Intentos", statPuntos:"Puntos totales", statRacha:"Racha actual", 
 toastMilestone:"Nueva racha récord: {n}", toastRegen:"Racha de {n}: recuperas un intento",
 qMeta:"USCIS #{official} · {cat} · {i}/{n}", hintPrefix:"Pista: {mask}",
 stampApprove:"Aprobado", stampRetry:"A repasar",
-answerPlaceholder:"Escribe tu respuesta en inglés", comprobar:"Comprobar",
+answerPlaceholder:"Escribe tu respuesta en inglés", comprobar:"Comprobar",answerCheckError:"No se pudo comprobar la respuesta. Inténtalo de nuevo.",
 resultCorrect:"Acertaste", resultWrong:"Hay que repasar esta",
 acceptedAnswer:"Respuesta aceptada", livesRemaining:"Vidas restantes", continueBtn:"Continuar",
 expertPrompt:"Bien. Ahora explica en tus palabras por qué esta es la respuesta correcta:",
@@ -1308,7 +1308,7 @@ statIntentos:"生命值", statPuntos:"总积分", statRacha:"当前连胜", stat
 toastMilestone:"新纪录连胜：{n}", toastRegen:"连胜{n}次：恢复一条生命",
 qMeta:"USCIS第{official}题 · {cat} · {i}/{n}", hintPrefix:"提示：{mask}",
 stampApprove:"回答正确", stampRetry:"需要复习",
-answerPlaceholder:"用英语输入你的答案", comprobar:"检查",
+answerPlaceholder:"用英语输入你的答案", comprobar:"检查",answerCheckError:"无法检查答案，请再试一次。",
 resultCorrect:"答对了", resultWrong:"这道题需要复习",
 acceptedAnswer:"参考答案", livesRemaining:"剩余生命", continueBtn:"继续",
 expertPrompt:"很好。现在请用你自己的话解释为什么这是正确答案：",
@@ -1367,7 +1367,7 @@ statIntentos:"Buhay", statPuntos:"Kabuuang puntos", statRacha:"Kasalukuyang stre
 toastMilestone:"Bagong pinakamahabang streak: {n}", toastRegen:"Streak na {n}: nakabawi ka ng isang buhay",
 qMeta:"USCIS #{official} · {cat} · {i}/{n}", hintPrefix:"Pahiwatig: {mask}",
 stampApprove:"Tama", stampRetry:"Kailangang balikan",
-answerPlaceholder:"Isulat ang sagot mo sa Ingles", comprobar:"Suriin",
+answerPlaceholder:"Isulat ang sagot mo sa Ingles", comprobar:"Suriin",answerCheckError:"Hindi masuri ang sagot. Subukan muli.",
 resultCorrect:"Tama ka", resultWrong:"Kailangan mong balikan ito",
 acceptedAnswer:"Tanggap na sagot", livesRemaining:"Natitirang buhay", continueBtn:"Magpatuloy",
 expertPrompt:"Mahusay. Ngayon ipaliwanag mo sa sarili mong salita kung bakit ito ang tamang sagot:",
@@ -1426,7 +1426,7 @@ statIntentos:"Mạng", statPuntos:"Tổng điểm", statRacha:"Chuỗi hiện t�
 toastMilestone:"Kỷ lục chuỗi mới: {n}", toastRegen:"Chuỗi {n}: bạn được hoàn lại một mạng",
 qMeta:"USCIS #{official} · {cat} · {i}/{n}", hintPrefix:"Gợi ý: {mask}",
 stampApprove:"Chính xác", stampRetry:"Cần ôn lại",
-answerPlaceholder:"Nhập câu trả lời bằng tiếng Anh", comprobar:"Kiểm tra",
+answerPlaceholder:"Nhập câu trả lời bằng tiếng Anh", comprobar:"Kiểm tra",answerCheckError:"Không thể kiểm tra câu trả lời. Hãy thử lại.",
 resultCorrect:"Bạn đã đúng", resultWrong:"Cần ôn lại câu này",
 acceptedAnswer:"Đáp án được chấp nhận", livesRemaining:"Số mạng còn lại", continueBtn:"Tiếp tục",
 expertPrompt:"Tốt lắm. Bây giờ hãy giải thích bằng lời của bạn tại sao đây là đáp án đúng:",
@@ -2070,6 +2070,7 @@ input.placeholder=t('answerPlaceholder');
 input.autocomplete='off';
 var btn=document.createElement('button');
 btn.className='btn-check';
+btn.type='button';
 btn.textContent=t('comprobar');
 input.addEventListener('keydown',function(e){ if(e.key==='Enter'){ submitTyped(item,input,btn,m); } });
 btn.onclick=function(){ submitTyped(item,input,btn,m); };
@@ -2105,12 +2106,17 @@ if(answered) return;
 if(!ensureProfile(item)) return;
 var val=input.value.trim();
 if(!val) return;
+/* Calculate the result before locking the question. This prevents a failed
+   checker/report hook from leaving the question permanently unresponsive. */
+var correct=false;
+try{ correct=isAcceptedText(val,item,m.strictness); }
+catch(e){ console.error('Answer checker error:',e); try{ toast(t('answerCheckError')); }catch(_e){} return; }
 answered=true;
-var correct=isCorrectFreeText(val,item.a,m.strictness,item);
-rememberAnswerForReport(item,val,correct);
+try{ rememberAnswerForReport(item,val,correct); }catch(e){ console.warn('Report context error:',e); }
 input.disabled=true;
 btn.disabled=true;
-mark(correct);
+try{ mark(correct); }
+catch(e){ console.error('Result handler error:',e); answered=false; input.disabled=false; btn.disabled=false; try{ toast(t('answerCheckError')); }catch(_e){} }
 }
 
 function renderExpertStep1(item,c){
@@ -2123,6 +2129,7 @@ input.placeholder=t('answerPlaceholder');
 input.autocomplete='off';
 var btn=document.createElement('button');
 btn.className='btn-check';
+btn.type='button';
 btn.textContent=t('comprobar');
 input.addEventListener('keydown',function(e){ if(e.key==='Enter'){ submitExpertAnswer(item,input,btn,c); } });
 btn.onclick=function(){ submitExpertAnswer(item,input,btn,c); };
@@ -2136,13 +2143,15 @@ if(answered) return;
 if(!ensureProfile(item)) return;
 var val=input.value.trim();
 if(!val) return;
-var correct=isCorrectFreeText(val,item.a,'hard',item);
-rememberAnswerForReport(item,val,correct);
+var correct=false;
+try{ correct=isAcceptedText(val,item,'hard'); }
+catch(e){ console.error('Expert answer checker error:',e); try{ toast(t('answerCheckError')); }catch(_e){} return; }
+try{ rememberAnswerForReport(item,val,correct); }catch(e){ console.warn('Report context error:',e); }
 input.disabled=true;
 btn.disabled=true;
 if(!correct){
 answered=true;
-mark(false);
+try{ mark(false); }catch(e){ console.error('Result handler error:',e); answered=false; input.disabled=false; btn.disabled=false; try{ toast(t('answerCheckError')); }catch(_e){} }
 return;
 }
 renderExpertStep2(item,c);
@@ -2157,6 +2166,7 @@ ta.placeholder=t('expertTextareaPh');
 ta.rows=3;
 var btn2=document.createElement('button');
 btn2.className='wide btn-check';
+btn2.type='button';
 btn2.textContent=t('expertRefBtn');
 btn2.onclick=function(){
 if(ta.value.trim().length<10) return;
